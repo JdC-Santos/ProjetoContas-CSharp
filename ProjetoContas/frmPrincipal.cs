@@ -16,5 +16,10 @@ namespace ProjetoContas
         {
             InitializeComponent();
         }
+
+        private void contasAReceberToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
