@@ -1,0 +1,10 @@
+C:\Users\aluno2\Source\Repos\ProjetoContas\ProjetoContas\bin\Debug\ProjetoContas.exe.config
+C:\Users\aluno2\Source\Repos\ProjetoContas\ProjetoContas\bin\Debug\ProjetoContas.exe
+C:\Users\aluno2\Source\Repos\ProjetoContas\ProjetoContas\bin\Debug\ProjetoContas.pdb
+C:\Users\aluno2\Source\Repos\ProjetoContas\ProjetoContas\obj\Debug\ProjetoContas.csprojAssemblyReference.cache
+C:\Users\aluno2\Source\Repos\ProjetoContas\ProjetoContas\obj\Debug\ProjetoContas.formLogin.resources
+C:\Users\aluno2\Source\Repos\ProjetoContas\ProjetoContas\obj\Debug\ProjetoContas.Properties.Resources.resources
+C:\Users\aluno2\Source\Repos\ProjetoContas\ProjetoContas\obj\Debug\ProjetoContas.csproj.GenerateResource.cache
+C:\Users\aluno2\Source\Repos\ProjetoContas\ProjetoContas\obj\Debug\ProjetoContas.csproj.CoreCompileInputs.cache
+C:\Users\aluno2\Source\Repos\ProjetoContas\ProjetoContas\obj\Debug\ProjetoContas.exe
+C:\Users\aluno2\Source\Repos\ProjetoContas\ProjetoContas\obj\Debug\ProjetoContas.pdb
