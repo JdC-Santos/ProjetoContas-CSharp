@@ -8,3 +8,17 @@ C:\Users\aluno2\Source\Repos\ProjetoContas\ProjetoContas\obj\Debug\ProjetoContas
 C:\Users\aluno2\Source\Repos\ProjetoContas\ProjetoContas\obj\Debug\ProjetoContas.csproj.CoreCompileInputs.cache
 C:\Users\aluno2\Source\Repos\ProjetoContas\ProjetoContas\obj\Debug\ProjetoContas.exe
 C:\Users\aluno2\Source\Repos\ProjetoContas\ProjetoContas\obj\Debug\ProjetoContas.pdb
+C:\Users\aluno2\Downloads\ProjetoContas-CSharp\ProjetoContas\bin\Debug\contas.mdf
+C:\Users\aluno2\Downloads\ProjetoContas-CSharp\ProjetoContas\bin\Debug\contas_log.ldf
+C:\Users\aluno2\Downloads\ProjetoContas-CSharp\ProjetoContas\bin\Debug\ProjetoContas.exe.config
+C:\Users\aluno2\Downloads\ProjetoContas-CSharp\ProjetoContas\bin\Debug\ProjetoContas.exe
+C:\Users\aluno2\Downloads\ProjetoContas-CSharp\ProjetoContas\bin\Debug\ProjetoContas.pdb
+C:\Users\aluno2\Downloads\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.csprojAssemblyReference.cache
+C:\Users\aluno2\Downloads\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.frmCadastro.resources
+C:\Users\aluno2\Downloads\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.formLogin.resources
+C:\Users\aluno2\Downloads\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.frmPrincipal.resources
+C:\Users\aluno2\Downloads\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.Properties.Resources.resources
+C:\Users\aluno2\Downloads\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.csproj.GenerateResource.cache
+C:\Users\aluno2\Downloads\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.csproj.CoreCompileInputs.cache
+C:\Users\aluno2\Downloads\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.exe
+C:\Users\aluno2\Downloads\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.pdb
