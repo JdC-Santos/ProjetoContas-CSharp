@@ -536,8 +536,7 @@ namespace ProjetoContas {
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columncd_administrador}, true));
                 this.columncd_administrador.AutoIncrement = true;
-                this.columncd_administrador.AutoIncrementSeed = -1;
-                this.columncd_administrador.AutoIncrementStep = -1;
+                this.columncd_administrador.AutoIncrementSeed = 1;
                 this.columncd_administrador.AllowDBNull = false;
                 this.columncd_administrador.ReadOnly = true;
                 this.columncd_administrador.Unique = true;
@@ -921,8 +920,7 @@ namespace ProjetoContas {
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columncd_conta}, true));
                 this.columncd_conta.AutoIncrement = true;
-                this.columncd_conta.AutoIncrementSeed = -1;
-                this.columncd_conta.AutoIncrementStep = -1;
+                this.columncd_conta.AutoIncrementSeed = 1;
                 this.columncd_conta.AllowDBNull = false;
                 this.columncd_conta.ReadOnly = true;
                 this.columncd_conta.Unique = true;
@@ -1368,8 +1366,7 @@ namespace ProjetoContas {
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columncd_usuario}, true));
                 this.columncd_usuario.AutoIncrement = true;
-                this.columncd_usuario.AutoIncrementSeed = -1;
-                this.columncd_usuario.AutoIncrementStep = -1;
+                this.columncd_usuario.AutoIncrementSeed = 1;
                 this.columncd_usuario.AllowDBNull = false;
                 this.columncd_usuario.ReadOnly = true;
                 this.columncd_usuario.Unique = true;

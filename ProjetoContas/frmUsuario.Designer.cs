@@ -86,6 +86,7 @@
             // 
             this.txtNivel.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "sg_nivel", true));
             this.txtNivel.Location = new System.Drawing.Point(84, 156);
+            this.txtNivel.MaxLength = 1;
             this.txtNivel.Name = "txtNivel";
             this.txtNivel.Size = new System.Drawing.Size(244, 20);
             this.txtNivel.TabIndex = 2;
