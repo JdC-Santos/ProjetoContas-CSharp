@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProjetoContas
 {
-    public partial class frmCadastro : Form
+    public partial class frmUsuario : Form
     {
-        public frmCadastro()
+        public frmUsuario()
         {
             InitializeComponent();
         }
