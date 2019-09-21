@@ -21,9 +21,6 @@ namespace ProjetoContas
         {
             // TODO: esta linha de código carrega dados na tabela 'contasDataSet1.tb_administrador'. Você pode movê-la ou removê-la conforme necessário.
             this.tb_administradorTableAdapter.Fill(this.contasDataSet1.tb_administrador);
-            // TODO: esta linha de código carrega dados na tabela 'contasDataSet1.tb_usuario'. Você pode movê-la ou removê-la conforme necessário.
-            this.tb_usuarioTableAdapter.Fill(this.contasDataSet1.tb_usuario);
-
         }
 
         private void btnCancelarCadastro_Click(object sender, EventArgs e)
@@ -34,6 +31,28 @@ namespace ProjetoContas
         private void btnSair_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            bindingSource1.AddNew();
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            Validate();
+            bindingSource1.EndEdit();
+            tb_administradorTableAdapter.Update(this.contasDataSet1.tb_administrador);
+        }
+
+        private void btnAnterior_Click(object sender, EventArgs e)
+        {
+            bindingSource1.MovePrevious();
+        }
+
+        private void btnProximo_Click(object sender, EventArgs e)
+        {
+            bindingSource1.MoveNext();
         }
     }
 }
