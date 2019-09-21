@@ -19,6 +19,10 @@ namespace ProjetoContas
 
         private void frmCadastro_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'contasDataSet1.tb_administrador'. Você pode movê-la ou removê-la conforme necessário.
+            this.tb_administradorTableAdapter.Fill(this.contasDataSet1.tb_administrador);
+            // TODO: esta linha de código carrega dados na tabela 'contasDataSet1.tb_usuario'. Você pode movê-la ou removê-la conforme necessário.
+            this.tb_usuarioTableAdapter.Fill(this.contasDataSet1.tb_usuario);
 
         }
 
@@ -27,22 +31,9 @@ namespace ProjetoContas
             Close();
         }
 
-        private void btnCadastrarAdmin_Click(object sender, EventArgs e)
+        private void btnSair_Click(object sender, EventArgs e)
         {
-            string nome  = txtNome.Text;
-            string nivel = txtNivel.Text;
-            string login = txtCadLogin.Text;
-            string senha = txtSenha.Text;
-
-            if (nome != "" && senha != "" && nivel != "" && login != "")
-            {
-                MessageBox.Show("usuário cadastrado com suceso!");
-            }
-            else
-            {
-                MessageBox.Show("Preencha todos os campos!");
-            }
-            
+            Close();
         }
     }
 }
