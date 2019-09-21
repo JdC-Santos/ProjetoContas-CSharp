@@ -61,6 +61,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="contasDataSet.cs">
+      <DependentUpon>contasDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="contasDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>contasDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +107,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="contasDataSet.xsc">
+      <DependentUpon>contasDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="contasDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>contasDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="contasDataSet.xss">
+      <DependentUpon>contasDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
