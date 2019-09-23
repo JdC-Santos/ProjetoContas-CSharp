@@ -120,5 +120,24 @@ namespace ProjetoContas
         {
             Habilita();
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Desabilita();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (tb_administradorBindingSource.Count > 0)
+            {
+                tb_administradorBindingSource.RemoveCurrent();
+                tb_administradorTableAdapter.Update(contasDataSet.tb_administrador);
+                MessageBox.Show("Registro excluido com sucesso!");
+            }
+            else
+            {
+                MessageBox.Show("Não há registros para excluir!");
+            }
+        }
     }
 }
