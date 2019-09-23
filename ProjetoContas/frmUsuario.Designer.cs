@@ -29,16 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtNivel = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtCadLogin = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtSenha = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
+            System.Windows.Forms.Label cd_administradorLabel;
+            System.Windows.Forms.Label nm_administradorLabel;
+            System.Windows.Forms.Label sg_nivelLabel;
+            System.Windows.Forms.Label nm_loginLabel;
+            System.Windows.Forms.Label cd_senhaLabel;
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
@@ -49,98 +44,23 @@
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.contasDataSet1 = new ProjetoContas.contasDataSet();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.contasDataSet = new ProjetoContas.contasDataSet();
+            this.tb_administradorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tb_administradorTableAdapter = new ProjetoContas.contasDataSetTableAdapters.tb_administradorTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.contasDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            this.tableAdapterManager = new ProjetoContas.contasDataSetTableAdapters.TableAdapterManager();
+            this.cd_administradorTextBox = new System.Windows.Forms.TextBox();
+            this.nm_administradorTextBox = new System.Windows.Forms.TextBox();
+            this.sg_nivelTextBox = new System.Windows.Forms.TextBox();
+            this.nm_loginTextBox = new System.Windows.Forms.TextBox();
+            this.cd_senhaTextBox = new System.Windows.Forms.TextBox();
+            cd_administradorLabel = new System.Windows.Forms.Label();
+            nm_administradorLabel = new System.Windows.Forms.Label();
+            sg_nivelLabel = new System.Windows.Forms.Label();
+            nm_loginLabel = new System.Windows.Forms.Label();
+            cd_senhaLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.contasDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb_administradorBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtNome
-            // 
-            this.txtNome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "nm_administrador", true));
-            this.txtNome.Location = new System.Drawing.Point(84, 99);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(244, 20);
-            this.txtNome.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(84, 74);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Nome";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(84, 131);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Nivel";
-            // 
-            // txtNivel
-            // 
-            this.txtNivel.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "sg_nivel", true));
-            this.txtNivel.Location = new System.Drawing.Point(84, 156);
-            this.txtNivel.MaxLength = 1;
-            this.txtNivel.Name = "txtNivel";
-            this.txtNivel.Size = new System.Drawing.Size(244, 20);
-            this.txtNivel.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(84, 188);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Login";
-            // 
-            // txtCadLogin
-            // 
-            this.txtCadLogin.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "nm_login", true));
-            this.txtCadLogin.Location = new System.Drawing.Point(84, 213);
-            this.txtCadLogin.Name = "txtCadLogin";
-            this.txtCadLogin.Size = new System.Drawing.Size(244, 20);
-            this.txtCadLogin.TabIndex = 4;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(84, 245);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Senha";
-            // 
-            // txtSenha
-            // 
-            this.txtSenha.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "cd_senha", true));
-            this.txtSenha.Location = new System.Drawing.Point(84, 270);
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(241, 20);
-            this.txtSenha.TabIndex = 6;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(84, 17);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Código";
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "cd_administrador", true));
-            this.txtCodigo.Location = new System.Drawing.Point(84, 42);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(244, 20);
-            this.txtCodigo.TabIndex = 8;
             // 
             // btnExcluir
             // 
@@ -159,6 +79,7 @@
             this.btnAlterar.TabIndex = 11;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnNovo
             // 
@@ -194,7 +115,7 @@
             // 
             this.btnSair.BackColor = System.Drawing.SystemColors.Info;
             this.btnSair.ForeColor = System.Drawing.Color.Red;
-            this.btnSair.Location = new System.Drawing.Point(318, 370);
+            this.btnSair.Location = new System.Drawing.Point(318, 362);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(75, 23);
             this.btnSair.TabIndex = 15;
@@ -204,7 +125,7 @@
             // 
             // btnImprimir
             // 
-            this.btnImprimir.Location = new System.Drawing.Point(243, 370);
+            this.btnImprimir.Location = new System.Drawing.Point(243, 362);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(75, 23);
             this.btnImprimir.TabIndex = 16;
@@ -213,7 +134,7 @@
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.Location = new System.Drawing.Point(168, 370);
+            this.btnPesquisar.Location = new System.Drawing.Point(168, 362);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(75, 23);
             this.btnPesquisar.TabIndex = 17;
@@ -222,7 +143,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(93, 370);
+            this.btnCancelar.Location = new System.Drawing.Point(93, 362);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 18;
@@ -231,7 +152,7 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(18, 370);
+            this.btnSalvar.Location = new System.Drawing.Point(18, 362);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
             this.btnSalvar.TabIndex = 19;
@@ -239,41 +160,138 @@
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // contasDataSet1
+            // contasDataSet
             // 
-            this.contasDataSet1.DataSetName = "contasDataSet";
-            this.contasDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.contasDataSet.DataSetName = "contasDataSet";
+            this.contasDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // bindingSource1
+            // tb_administradorBindingSource
             // 
-            this.bindingSource1.DataMember = "tb_administrador";
-            this.bindingSource1.DataSource = this.contasDataSet1;
+            this.tb_administradorBindingSource.DataMember = "tb_administrador";
+            this.tb_administradorBindingSource.DataSource = this.contasDataSet;
             // 
             // tb_administradorTableAdapter
             // 
             this.tb_administradorTableAdapter.ClearBeforeFill = true;
             // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.tb_administradorTableAdapter = this.tb_administradorTableAdapter;
+            this.tableAdapterManager.tb_contaTableAdapter = null;
+            this.tableAdapterManager.tb_usuarioTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = ProjetoContas.contasDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // cd_administradorLabel
+            // 
+            cd_administradorLabel.AutoSize = true;
+            cd_administradorLabel.Location = new System.Drawing.Point(29, 83);
+            cd_administradorLabel.Name = "cd_administradorLabel";
+            cd_administradorLabel.Size = new System.Drawing.Size(39, 13);
+            cd_administradorLabel.TabIndex = 20;
+            cd_administradorLabel.Text = "codigo";
+            // 
+            // cd_administradorTextBox
+            // 
+            this.cd_administradorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_administradorBindingSource, "cd_administrador", true));
+            this.cd_administradorTextBox.Location = new System.Drawing.Point(124, 80);
+            this.cd_administradorTextBox.Name = "cd_administradorTextBox";
+            this.cd_administradorTextBox.Size = new System.Drawing.Size(247, 20);
+            this.cd_administradorTextBox.TabIndex = 21;
+            // 
+            // nm_administradorLabel
+            // 
+            nm_administradorLabel.AutoSize = true;
+            nm_administradorLabel.Location = new System.Drawing.Point(29, 109);
+            nm_administradorLabel.Name = "nm_administradorLabel";
+            nm_administradorLabel.Size = new System.Drawing.Size(33, 13);
+            nm_administradorLabel.TabIndex = 22;
+            nm_administradorLabel.Text = "nome";
+            // 
+            // nm_administradorTextBox
+            // 
+            this.nm_administradorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_administradorBindingSource, "nm_administrador", true));
+            this.nm_administradorTextBox.Location = new System.Drawing.Point(124, 106);
+            this.nm_administradorTextBox.MaxLength = 50;
+            this.nm_administradorTextBox.Name = "nm_administradorTextBox";
+            this.nm_administradorTextBox.Size = new System.Drawing.Size(247, 20);
+            this.nm_administradorTextBox.TabIndex = 23;
+            // 
+            // sg_nivelLabel
+            // 
+            sg_nivelLabel.AutoSize = true;
+            sg_nivelLabel.Location = new System.Drawing.Point(29, 135);
+            sg_nivelLabel.Name = "sg_nivelLabel";
+            sg_nivelLabel.Size = new System.Drawing.Size(29, 13);
+            sg_nivelLabel.TabIndex = 24;
+            sg_nivelLabel.Text = "nivel";
+            // 
+            // sg_nivelTextBox
+            // 
+            this.sg_nivelTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_administradorBindingSource, "sg_nivel", true));
+            this.sg_nivelTextBox.Location = new System.Drawing.Point(124, 132);
+            this.sg_nivelTextBox.MaxLength = 1;
+            this.sg_nivelTextBox.Name = "sg_nivelTextBox";
+            this.sg_nivelTextBox.Size = new System.Drawing.Size(247, 20);
+            this.sg_nivelTextBox.TabIndex = 25;
+            // 
+            // nm_loginLabel
+            // 
+            nm_loginLabel.AutoSize = true;
+            nm_loginLabel.Location = new System.Drawing.Point(29, 161);
+            nm_loginLabel.Name = "nm_loginLabel";
+            nm_loginLabel.Size = new System.Drawing.Size(29, 13);
+            nm_loginLabel.TabIndex = 26;
+            nm_loginLabel.Text = "login";
+            // 
+            // nm_loginTextBox
+            // 
+            this.nm_loginTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_administradorBindingSource, "nm_login", true));
+            this.nm_loginTextBox.Location = new System.Drawing.Point(124, 158);
+            this.nm_loginTextBox.MaxLength = 20;
+            this.nm_loginTextBox.Name = "nm_loginTextBox";
+            this.nm_loginTextBox.Size = new System.Drawing.Size(247, 20);
+            this.nm_loginTextBox.TabIndex = 27;
+            // 
+            // cd_senhaLabel
+            // 
+            cd_senhaLabel.AutoSize = true;
+            cd_senhaLabel.Location = new System.Drawing.Point(29, 187);
+            cd_senhaLabel.Name = "cd_senhaLabel";
+            cd_senhaLabel.Size = new System.Drawing.Size(36, 13);
+            cd_senhaLabel.TabIndex = 28;
+            cd_senhaLabel.Text = "senha";
+            // 
+            // cd_senhaTextBox
+            // 
+            this.cd_senhaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_administradorBindingSource, "cd_senha", true));
+            this.cd_senhaTextBox.Location = new System.Drawing.Point(124, 184);
+            this.cd_senhaTextBox.MaxLength = 20;
+            this.cd_senhaTextBox.Name = "cd_senhaTextBox";
+            this.cd_senhaTextBox.Size = new System.Drawing.Size(247, 20);
+            this.cd_senhaTextBox.TabIndex = 29;
+            // 
             // frmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(414, 433);
+            this.ClientSize = new System.Drawing.Size(412, 405);
             this.ControlBox = false;
+            this.Controls.Add(cd_administradorLabel);
+            this.Controls.Add(this.cd_administradorTextBox);
+            this.Controls.Add(nm_administradorLabel);
+            this.Controls.Add(this.nm_administradorTextBox);
+            this.Controls.Add(sg_nivelLabel);
+            this.Controls.Add(this.sg_nivelTextBox);
+            this.Controls.Add(nm_loginLabel);
+            this.Controls.Add(this.nm_loginTextBox);
+            this.Controls.Add(cd_senhaLabel);
+            this.Controls.Add(this.cd_senhaTextBox);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.btnSair);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtCodigo);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtSenha);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtCadLogin);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtNivel);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtNome);
             this.Controls.Add(this.btnAnterior);
             this.Controls.Add(this.btnProximo);
             this.Controls.Add(this.btnNovo);
@@ -282,25 +300,14 @@
             this.Name = "frmUsuario";
             this.Text = "Usuários";
             this.Load += new System.EventHandler(this.frmCadastro_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.contasDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contasDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb_administradorBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtNivel;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtCadLogin;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtSenha;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnNovo;
@@ -311,8 +318,14 @@
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnSalvar;
-        private contasDataSet contasDataSet1;
-        private System.Windows.Forms.BindingSource bindingSource1;
+        private contasDataSet contasDataSet;
+        private System.Windows.Forms.BindingSource tb_administradorBindingSource;
         private contasDataSetTableAdapters.tb_administradorTableAdapter tb_administradorTableAdapter;
+        private contasDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.TextBox cd_administradorTextBox;
+        private System.Windows.Forms.TextBox nm_administradorTextBox;
+        private System.Windows.Forms.TextBox sg_nivelTextBox;
+        private System.Windows.Forms.TextBox nm_loginTextBox;
+        private System.Windows.Forms.TextBox cd_senhaTextBox;
     }
 }
