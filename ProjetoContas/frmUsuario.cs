@@ -118,7 +118,15 @@ namespace ProjetoContas
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            Habilita();
+            if (tb_administradorBindingSource.Count > 0)
+            {
+                Habilita();
+            }
+            else
+            {
+                MessageBox.Show("Não há registros para alterar!");
+            }
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
