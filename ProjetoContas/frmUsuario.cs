@@ -131,6 +131,7 @@ namespace ProjetoContas
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            tb_administradorBindingSource.CancelEdit();
             Desabilita();
         }
 
