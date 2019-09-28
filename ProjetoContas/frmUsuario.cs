@@ -63,20 +63,19 @@ namespace ProjetoContas
         public frmUsuario()
         {
             InitializeComponent();
-            Desabilita();
+         
         }
 
         private void frmCadastro_Load(object sender, EventArgs e)
         {
             // TODO: esta linha de código carrega dados na tabela 'contasDataSet.tb_administrador'. Você pode movê-la ou removê-la conforme necessário.
-            //this.tb_administradorTableAdapter.Fill(this.contasDataSet.tb_administrador);
-
+            this.tb_administradorTableAdapter.Fill(this.contasDataSet.tb_administrador);
+            Desabilita();
         }
 
         private void btnCancelarCadastro_Click(object sender, EventArgs e)
         {
             Close();
-            Desabilita();
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -112,7 +111,7 @@ namespace ProjetoContas
         {
             this.Validate();
             this.tb_administradorBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.contasDataSet);
+            this.tb_administradorTableAdapter.Update(this.contasDataSet.tb_administrador);
 
         }
 

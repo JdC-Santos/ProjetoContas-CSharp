@@ -34,6 +34,7 @@
             System.Windows.Forms.Label sg_nivelLabel;
             System.Windows.Forms.Label nm_loginLabel;
             System.Windows.Forms.Label cd_senhaLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsuario));
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
@@ -47,12 +48,23 @@
             this.contasDataSet = new ProjetoContas.contasDataSet();
             this.tb_administradorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tb_administradorTableAdapter = new ProjetoContas.contasDataSetTableAdapters.tb_administradorTableAdapter();
-            this.tableAdapterManager = new ProjetoContas.contasDataSetTableAdapters.TableAdapterManager();
             this.cd_administradorTextBox = new System.Windows.Forms.TextBox();
             this.nm_administradorTextBox = new System.Windows.Forms.TextBox();
             this.sg_nivelTextBox = new System.Windows.Forms.TextBox();
             this.nm_loginTextBox = new System.Windows.Forms.TextBox();
             this.cd_senhaTextBox = new System.Windows.Forms.TextBox();
+            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             cd_administradorLabel = new System.Windows.Forms.Label();
             nm_administradorLabel = new System.Windows.Forms.Label();
             sg_nivelLabel = new System.Windows.Forms.Label();
@@ -60,7 +72,54 @@
             cd_senhaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.contasDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_administradorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
+            this.bindingNavigator1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // cd_administradorLabel
+            // 
+            cd_administradorLabel.AutoSize = true;
+            cd_administradorLabel.Location = new System.Drawing.Point(29, 83);
+            cd_administradorLabel.Name = "cd_administradorLabel";
+            cd_administradorLabel.Size = new System.Drawing.Size(39, 13);
+            cd_administradorLabel.TabIndex = 20;
+            cd_administradorLabel.Text = "codigo";
+            // 
+            // nm_administradorLabel
+            // 
+            nm_administradorLabel.AutoSize = true;
+            nm_administradorLabel.Location = new System.Drawing.Point(29, 109);
+            nm_administradorLabel.Name = "nm_administradorLabel";
+            nm_administradorLabel.Size = new System.Drawing.Size(33, 13);
+            nm_administradorLabel.TabIndex = 22;
+            nm_administradorLabel.Text = "nome";
+            // 
+            // sg_nivelLabel
+            // 
+            sg_nivelLabel.AutoSize = true;
+            sg_nivelLabel.Location = new System.Drawing.Point(29, 135);
+            sg_nivelLabel.Name = "sg_nivelLabel";
+            sg_nivelLabel.Size = new System.Drawing.Size(29, 13);
+            sg_nivelLabel.TabIndex = 24;
+            sg_nivelLabel.Text = "nivel";
+            // 
+            // nm_loginLabel
+            // 
+            nm_loginLabel.AutoSize = true;
+            nm_loginLabel.Location = new System.Drawing.Point(29, 161);
+            nm_loginLabel.Name = "nm_loginLabel";
+            nm_loginLabel.Size = new System.Drawing.Size(29, 13);
+            nm_loginLabel.TabIndex = 26;
+            nm_loginLabel.Text = "login";
+            // 
+            // cd_senhaLabel
+            // 
+            cd_senhaLabel.AutoSize = true;
+            cd_senhaLabel.Location = new System.Drawing.Point(29, 187);
+            cd_senhaLabel.Name = "cd_senhaLabel";
+            cd_senhaLabel.Size = new System.Drawing.Size(36, 13);
+            cd_senhaLabel.TabIndex = 28;
+            cd_senhaLabel.Text = "senha";
             // 
             // btnExcluir
             // 
@@ -176,23 +235,6 @@
             // 
             this.tb_administradorTableAdapter.ClearBeforeFill = true;
             // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.tb_administradorTableAdapter = this.tb_administradorTableAdapter;
-            this.tableAdapterManager.tb_contaTableAdapter = null;
-            this.tableAdapterManager.tb_usuarioTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = ProjetoContas.contasDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // cd_administradorLabel
-            // 
-            cd_administradorLabel.AutoSize = true;
-            cd_administradorLabel.Location = new System.Drawing.Point(29, 83);
-            cd_administradorLabel.Name = "cd_administradorLabel";
-            cd_administradorLabel.Size = new System.Drawing.Size(39, 13);
-            cd_administradorLabel.TabIndex = 20;
-            cd_administradorLabel.Text = "codigo";
-            // 
             // cd_administradorTextBox
             // 
             this.cd_administradorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_administradorBindingSource, "cd_administrador", true));
@@ -200,15 +242,6 @@
             this.cd_administradorTextBox.Name = "cd_administradorTextBox";
             this.cd_administradorTextBox.Size = new System.Drawing.Size(247, 20);
             this.cd_administradorTextBox.TabIndex = 21;
-            // 
-            // nm_administradorLabel
-            // 
-            nm_administradorLabel.AutoSize = true;
-            nm_administradorLabel.Location = new System.Drawing.Point(29, 109);
-            nm_administradorLabel.Name = "nm_administradorLabel";
-            nm_administradorLabel.Size = new System.Drawing.Size(33, 13);
-            nm_administradorLabel.TabIndex = 22;
-            nm_administradorLabel.Text = "nome";
             // 
             // nm_administradorTextBox
             // 
@@ -219,15 +252,6 @@
             this.nm_administradorTextBox.Size = new System.Drawing.Size(247, 20);
             this.nm_administradorTextBox.TabIndex = 23;
             // 
-            // sg_nivelLabel
-            // 
-            sg_nivelLabel.AutoSize = true;
-            sg_nivelLabel.Location = new System.Drawing.Point(29, 135);
-            sg_nivelLabel.Name = "sg_nivelLabel";
-            sg_nivelLabel.Size = new System.Drawing.Size(29, 13);
-            sg_nivelLabel.TabIndex = 24;
-            sg_nivelLabel.Text = "nivel";
-            // 
             // sg_nivelTextBox
             // 
             this.sg_nivelTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_administradorBindingSource, "sg_nivel", true));
@@ -236,15 +260,6 @@
             this.sg_nivelTextBox.Name = "sg_nivelTextBox";
             this.sg_nivelTextBox.Size = new System.Drawing.Size(247, 20);
             this.sg_nivelTextBox.TabIndex = 25;
-            // 
-            // nm_loginLabel
-            // 
-            nm_loginLabel.AutoSize = true;
-            nm_loginLabel.Location = new System.Drawing.Point(29, 161);
-            nm_loginLabel.Name = "nm_loginLabel";
-            nm_loginLabel.Size = new System.Drawing.Size(29, 13);
-            nm_loginLabel.TabIndex = 26;
-            nm_loginLabel.Text = "login";
             // 
             // nm_loginTextBox
             // 
@@ -255,15 +270,6 @@
             this.nm_loginTextBox.Size = new System.Drawing.Size(247, 20);
             this.nm_loginTextBox.TabIndex = 27;
             // 
-            // cd_senhaLabel
-            // 
-            cd_senhaLabel.AutoSize = true;
-            cd_senhaLabel.Location = new System.Drawing.Point(29, 187);
-            cd_senhaLabel.Name = "cd_senhaLabel";
-            cd_senhaLabel.Size = new System.Drawing.Size(36, 13);
-            cd_senhaLabel.TabIndex = 28;
-            cd_senhaLabel.Text = "senha";
-            // 
             // cd_senhaTextBox
             // 
             this.cd_senhaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_administradorBindingSource, "cd_senha", true));
@@ -273,12 +279,126 @@
             this.cd_senhaTextBox.Size = new System.Drawing.Size(247, 20);
             this.cd_senhaTextBox.TabIndex = 29;
             // 
+            // bindingNavigator1
+            // 
+            this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
+            this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem});
+            this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
+            this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.bindingNavigator1.Name = "bindingNavigator1";
+            this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
+            this.bindingNavigator1.Size = new System.Drawing.Size(412, 25);
+            this.bindingNavigator1.TabIndex = 30;
+            this.bindingNavigator1.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Mover primeiro";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Posição";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Posição atual";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Número total de itens";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Mover próximo";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Mover último";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Adicionar novo";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Excluir";
+            // 
             // frmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(412, 405);
             this.ControlBox = false;
+            this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(cd_administradorLabel);
             this.Controls.Add(this.cd_administradorTextBox);
             this.Controls.Add(nm_administradorLabel);
@@ -304,6 +424,9 @@
             this.Load += new System.EventHandler(this.frmCadastro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.contasDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_administradorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
+            this.bindingNavigator1.ResumeLayout(false);
+            this.bindingNavigator1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,11 +446,22 @@
         private contasDataSet contasDataSet;
         private System.Windows.Forms.BindingSource tb_administradorBindingSource;
         private contasDataSetTableAdapters.tb_administradorTableAdapter tb_administradorTableAdapter;
-        private contasDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.TextBox cd_administradorTextBox;
         private System.Windows.Forms.TextBox nm_administradorTextBox;
         private System.Windows.Forms.TextBox sg_nivelTextBox;
         private System.Windows.Forms.TextBox nm_loginTextBox;
         private System.Windows.Forms.TextBox cd_senhaTextBox;
+        private System.Windows.Forms.BindingNavigator bindingNavigator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
     }
 }
