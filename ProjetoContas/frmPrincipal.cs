@@ -26,6 +26,7 @@ namespace ProjetoContas
         {
             frmUsuario fu = new frmUsuario();
             fu.Show();
+            Hide();
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
@@ -37,12 +38,14 @@ namespace ProjetoContas
         {
             frmClienteFornecedor fcf = new frmClienteFornecedor("f");
             fcf.Show();
+            Hide();
         }
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmClienteFornecedor fcf = new frmClienteFornecedor("c");
             fcf.Show();
+            Hide();
         }
     }
 }

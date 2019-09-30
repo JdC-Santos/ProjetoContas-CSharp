@@ -79,6 +79,8 @@ namespace ProjetoContas
 
         private void btnSair_Click(object sender, EventArgs e)
         {
+            frmPrincipal fp = new frmPrincipal();
+            fp.Show();
             Close();
         }
 
@@ -86,6 +88,7 @@ namespace ProjetoContas
         {
             tb_administradorBindingSource.AddNew();
             Habilita();
+            nm_administradorTextBox.Focus();
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)

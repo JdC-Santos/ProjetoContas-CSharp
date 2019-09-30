@@ -116,6 +116,8 @@ namespace ProjetoContas
             {
                 sg_tipoTextBox.Text = "Cliente";
             }
+
+            ds_usuarioTextBox.Focus();
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -160,6 +162,8 @@ namespace ProjetoContas
 
         private void btnSair_Click(object sender, EventArgs e)
         {
+            frmPrincipal fp = new frmPrincipal();
+            fp.Show();
             Close();
         }
     }

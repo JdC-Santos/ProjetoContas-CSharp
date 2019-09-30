@@ -119,6 +119,7 @@
             // 
             this.ds_usuarioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_usuarioBindingSource, "ds_usuario", true));
             this.ds_usuarioTextBox.Location = new System.Drawing.Point(113, 75);
+            this.ds_usuarioTextBox.MaxLength = 1;
             this.ds_usuarioTextBox.Name = "ds_usuarioTextBox";
             this.ds_usuarioTextBox.Size = new System.Drawing.Size(373, 20);
             this.ds_usuarioTextBox.TabIndex = 4;
@@ -136,6 +137,7 @@
             // 
             this.ds_enderecoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_usuarioBindingSource, "ds_endereco", true));
             this.ds_enderecoTextBox.Location = new System.Drawing.Point(113, 101);
+            this.ds_enderecoTextBox.MaxLength = 50;
             this.ds_enderecoTextBox.Name = "ds_enderecoTextBox";
             this.ds_enderecoTextBox.Size = new System.Drawing.Size(373, 20);
             this.ds_enderecoTextBox.TabIndex = 6;
@@ -153,6 +155,7 @@
             // 
             this.nm_cidadeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_usuarioBindingSource, "nm_cidade", true));
             this.nm_cidadeTextBox.Location = new System.Drawing.Point(113, 127);
+            this.nm_cidadeTextBox.MaxLength = 40;
             this.nm_cidadeTextBox.Name = "nm_cidadeTextBox";
             this.nm_cidadeTextBox.Size = new System.Drawing.Size(373, 20);
             this.nm_cidadeTextBox.TabIndex = 8;
@@ -170,6 +173,7 @@
             // 
             this.nm_bairroTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_usuarioBindingSource, "nm_bairro", true));
             this.nm_bairroTextBox.Location = new System.Drawing.Point(113, 153);
+            this.nm_bairroTextBox.MaxLength = 40;
             this.nm_bairroTextBox.Name = "nm_bairroTextBox";
             this.nm_bairroTextBox.Size = new System.Drawing.Size(373, 20);
             this.nm_bairroTextBox.TabIndex = 10;
@@ -187,6 +191,7 @@
             // 
             this.sg_estadoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_usuarioBindingSource, "sg_estado", true));
             this.sg_estadoTextBox.Location = new System.Drawing.Point(113, 179);
+            this.sg_estadoTextBox.MaxLength = 2;
             this.sg_estadoTextBox.Name = "sg_estadoTextBox";
             this.sg_estadoTextBox.Size = new System.Drawing.Size(373, 20);
             this.sg_estadoTextBox.TabIndex = 12;
@@ -204,6 +209,7 @@
             // 
             this.cd_cepTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_usuarioBindingSource, "cd_cep", true));
             this.cd_cepTextBox.Location = new System.Drawing.Point(113, 205);
+            this.cd_cepTextBox.MaxLength = 11;
             this.cd_cepTextBox.Name = "cd_cepTextBox";
             this.cd_cepTextBox.Size = new System.Drawing.Size(373, 20);
             this.cd_cepTextBox.TabIndex = 14;
@@ -221,6 +227,7 @@
             // 
             this.ds_telefoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_usuarioBindingSource, "ds_telefone", true));
             this.ds_telefoneTextBox.Location = new System.Drawing.Point(113, 231);
+            this.ds_telefoneTextBox.MaxLength = 15;
             this.ds_telefoneTextBox.Name = "ds_telefoneTextBox";
             this.ds_telefoneTextBox.Size = new System.Drawing.Size(373, 20);
             this.ds_telefoneTextBox.TabIndex = 16;
@@ -238,6 +245,7 @@
             // 
             this.ds_emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_usuarioBindingSource, "ds_email", true));
             this.ds_emailTextBox.Location = new System.Drawing.Point(113, 257);
+            this.ds_emailTextBox.MaxLength = 20;
             this.ds_emailTextBox.Name = "ds_emailTextBox";
             this.ds_emailTextBox.Size = new System.Drawing.Size(373, 20);
             this.ds_emailTextBox.TabIndex = 18;
@@ -255,6 +263,7 @@
             // 
             this.cd_cpfTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_usuarioBindingSource, "cd_cpf", true));
             this.cd_cpfTextBox.Location = new System.Drawing.Point(113, 309);
+            this.cd_cpfTextBox.MaxLength = 14;
             this.cd_cpfTextBox.Name = "cd_cpfTextBox";
             this.cd_cpfTextBox.Size = new System.Drawing.Size(373, 20);
             this.cd_cpfTextBox.TabIndex = 22;
@@ -272,6 +281,7 @@
             // 
             this.cd_cnpjTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_usuarioBindingSource, "cd_cnpj", true));
             this.cd_cnpjTextBox.Location = new System.Drawing.Point(113, 335);
+            this.cd_cnpjTextBox.MaxLength = 18;
             this.cd_cnpjTextBox.Name = "cd_cnpjTextBox";
             this.cd_cnpjTextBox.Size = new System.Drawing.Size(373, 20);
             this.cd_cnpjTextBox.TabIndex = 24;
@@ -289,6 +299,7 @@
             // 
             this.cd_rgTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_usuarioBindingSource, "cd_rg", true));
             this.cd_rgTextBox.Location = new System.Drawing.Point(113, 361);
+            this.cd_rgTextBox.MaxLength = 15;
             this.cd_rgTextBox.Name = "cd_rgTextBox";
             this.cd_rgTextBox.Size = new System.Drawing.Size(373, 20);
             this.cd_rgTextBox.TabIndex = 26;
@@ -306,6 +317,7 @@
             // 
             this.cd_ieTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_usuarioBindingSource, "cd_ie", true));
             this.cd_ieTextBox.Location = new System.Drawing.Point(113, 387);
+            this.cd_ieTextBox.MaxLength = 15;
             this.cd_ieTextBox.Name = "cd_ieTextBox";
             this.cd_ieTextBox.Size = new System.Drawing.Size(373, 20);
             this.cd_ieTextBox.TabIndex = 28;
@@ -423,6 +435,7 @@
             // 
             this.sg_tipoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_usuarioBindingSource, "sg_tipo", true));
             this.sg_tipoTextBox.Location = new System.Drawing.Point(113, 283);
+            this.sg_tipoTextBox.MaxLength = 15;
             this.sg_tipoTextBox.Name = "sg_tipoTextBox";
             this.sg_tipoTextBox.Size = new System.Drawing.Size(373, 20);
             this.sg_tipoTextBox.TabIndex = 39;
