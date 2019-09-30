@@ -63,7 +63,6 @@ namespace ProjetoContas
         public frmUsuario()
         {
             InitializeComponent();
-         
         }
 
         private void frmCadastro_Load(object sender, EventArgs e)

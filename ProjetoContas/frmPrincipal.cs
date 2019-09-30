@@ -24,8 +24,19 @@ namespace ProjetoContas
 
         private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmUsuario fc = new frmUsuario();
-            fc.Show();
+            frmUsuario fu = new frmUsuario();
+            fu.Show();
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void fornecedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmClienteFornecedor fcf = new frmClienteFornecedor("f");
+            fcf.Show();
         }
     }
 }

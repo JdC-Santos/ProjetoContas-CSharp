@@ -1379,7 +1379,7 @@ namespace ProjetoContas {
                 this.columncd_cep.MaxLength = 9;
                 this.columnds_telefone.MaxLength = 15;
                 this.columnds_email.MaxLength = 20;
-                this.columnsg_tipo.MaxLength = 1;
+                this.columnsg_tipo.MaxLength = 15;
                 this.columncd_cpf.MaxLength = 14;
                 this.columncd_cnpj.MaxLength = 18;
                 this.columncd_rg.MaxLength = 15;

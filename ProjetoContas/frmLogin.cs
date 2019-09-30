@@ -22,7 +22,8 @@ namespace ProjetoContas
             if (txtLogin.Text == "adm" && txtPw.Text == "123")
             {
                 frmPrincipal fp = new frmPrincipal();
-               fp.Show();
+                fp.Show();
+                Hide();
             }
         }
 

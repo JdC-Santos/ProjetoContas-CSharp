@@ -69,6 +69,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>contasDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="frmClienteFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClienteFornecedor.Designer.cs">
+      <DependentUpon>frmClienteFornecedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmClienteFornecedor.resx">
+      <DependentUpon>frmClienteFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmUsuario.resx">
       <DependentUpon>frmUsuario.cs</DependentUpon>
     </EmbeddedResource>
