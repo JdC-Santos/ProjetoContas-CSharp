@@ -38,5 +38,11 @@ namespace ProjetoContas
             frmClienteFornecedor fcf = new frmClienteFornecedor("f");
             fcf.Show();
         }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmClienteFornecedor fcf = new frmClienteFornecedor("c");
+            fcf.Show();
+        }
     }
 }
