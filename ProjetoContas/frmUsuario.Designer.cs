@@ -52,6 +52,7 @@
             this.sg_nivelTextBox = new System.Windows.Forms.TextBox();
             this.nm_loginTextBox = new System.Windows.Forms.TextBox();
             this.cd_senhaTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             cd_administradorLabel = new System.Windows.Forms.Label();
             nm_administradorLabel = new System.Windows.Forms.Label();
             sg_nivelLabel = new System.Windows.Forms.Label();
@@ -64,7 +65,7 @@
             // cd_administradorLabel
             // 
             cd_administradorLabel.AutoSize = true;
-            cd_administradorLabel.Location = new System.Drawing.Point(29, 83);
+            cd_administradorLabel.Location = new System.Drawing.Point(40, 130);
             cd_administradorLabel.Name = "cd_administradorLabel";
             cd_administradorLabel.Size = new System.Drawing.Size(39, 13);
             cd_administradorLabel.TabIndex = 20;
@@ -73,7 +74,7 @@
             // nm_administradorLabel
             // 
             nm_administradorLabel.AutoSize = true;
-            nm_administradorLabel.Location = new System.Drawing.Point(29, 109);
+            nm_administradorLabel.Location = new System.Drawing.Point(46, 156);
             nm_administradorLabel.Name = "nm_administradorLabel";
             nm_administradorLabel.Size = new System.Drawing.Size(33, 13);
             nm_administradorLabel.TabIndex = 22;
@@ -82,7 +83,7 @@
             // sg_nivelLabel
             // 
             sg_nivelLabel.AutoSize = true;
-            sg_nivelLabel.Location = new System.Drawing.Point(29, 135);
+            sg_nivelLabel.Location = new System.Drawing.Point(50, 182);
             sg_nivelLabel.Name = "sg_nivelLabel";
             sg_nivelLabel.Size = new System.Drawing.Size(29, 13);
             sg_nivelLabel.TabIndex = 24;
@@ -91,7 +92,7 @@
             // nm_loginLabel
             // 
             nm_loginLabel.AutoSize = true;
-            nm_loginLabel.Location = new System.Drawing.Point(29, 161);
+            nm_loginLabel.Location = new System.Drawing.Point(50, 208);
             nm_loginLabel.Name = "nm_loginLabel";
             nm_loginLabel.Size = new System.Drawing.Size(29, 13);
             nm_loginLabel.TabIndex = 26;
@@ -100,7 +101,7 @@
             // cd_senhaLabel
             // 
             cd_senhaLabel.AutoSize = true;
-            cd_senhaLabel.Location = new System.Drawing.Point(29, 187);
+            cd_senhaLabel.Location = new System.Drawing.Point(43, 234);
             cd_senhaLabel.Name = "cd_senhaLabel";
             cd_senhaLabel.Size = new System.Drawing.Size(36, 13);
             cd_senhaLabel.TabIndex = 28;
@@ -108,7 +109,7 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(318, 332);
+            this.btnExcluir.Location = new System.Drawing.Point(382, 307);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(75, 23);
             this.btnExcluir.TabIndex = 10;
@@ -118,7 +119,7 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(243, 332);
+            this.btnAlterar.Location = new System.Drawing.Point(307, 307);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(75, 23);
             this.btnAlterar.TabIndex = 11;
@@ -128,7 +129,7 @@
             // 
             // btnNovo
             // 
-            this.btnNovo.Location = new System.Drawing.Point(168, 332);
+            this.btnNovo.Location = new System.Drawing.Point(232, 307);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(75, 23);
             this.btnNovo.TabIndex = 12;
@@ -138,7 +139,7 @@
             // 
             // btnProximo
             // 
-            this.btnProximo.Location = new System.Drawing.Point(93, 332);
+            this.btnProximo.Location = new System.Drawing.Point(157, 307);
             this.btnProximo.Name = "btnProximo";
             this.btnProximo.Size = new System.Drawing.Size(75, 23);
             this.btnProximo.TabIndex = 13;
@@ -148,7 +149,7 @@
             // 
             // btnAnterior
             // 
-            this.btnAnterior.Location = new System.Drawing.Point(18, 332);
+            this.btnAnterior.Location = new System.Drawing.Point(82, 307);
             this.btnAnterior.Name = "btnAnterior";
             this.btnAnterior.Size = new System.Drawing.Size(75, 23);
             this.btnAnterior.TabIndex = 14;
@@ -160,7 +161,7 @@
             // 
             this.btnSair.BackColor = System.Drawing.SystemColors.Info;
             this.btnSair.ForeColor = System.Drawing.Color.Red;
-            this.btnSair.Location = new System.Drawing.Point(318, 362);
+            this.btnSair.Location = new System.Drawing.Point(382, 337);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(75, 23);
             this.btnSair.TabIndex = 15;
@@ -170,7 +171,7 @@
             // 
             // btnImprimir
             // 
-            this.btnImprimir.Location = new System.Drawing.Point(243, 362);
+            this.btnImprimir.Location = new System.Drawing.Point(307, 337);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(75, 23);
             this.btnImprimir.TabIndex = 16;
@@ -179,7 +180,7 @@
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.Location = new System.Drawing.Point(168, 362);
+            this.btnPesquisar.Location = new System.Drawing.Point(232, 337);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(75, 23);
             this.btnPesquisar.TabIndex = 17;
@@ -188,7 +189,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(93, 362);
+            this.btnCancelar.Location = new System.Drawing.Point(157, 337);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 18;
@@ -198,7 +199,7 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(18, 362);
+            this.btnSalvar.Location = new System.Drawing.Point(82, 337);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
             this.btnSalvar.TabIndex = 19;
@@ -223,53 +224,72 @@
             // cd_administradorTextBox
             // 
             this.cd_administradorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_administradorBindingSource, "cd_administrador", true));
-            this.cd_administradorTextBox.Location = new System.Drawing.Point(124, 80);
+            this.cd_administradorTextBox.Location = new System.Drawing.Point(82, 126);
             this.cd_administradorTextBox.Name = "cd_administradorTextBox";
-            this.cd_administradorTextBox.Size = new System.Drawing.Size(247, 20);
+            this.cd_administradorTextBox.Size = new System.Drawing.Size(375, 20);
             this.cd_administradorTextBox.TabIndex = 21;
             // 
             // nm_administradorTextBox
             // 
             this.nm_administradorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_administradorBindingSource, "nm_administrador", true));
-            this.nm_administradorTextBox.Location = new System.Drawing.Point(124, 106);
+            this.nm_administradorTextBox.Location = new System.Drawing.Point(82, 152);
             this.nm_administradorTextBox.MaxLength = 50;
             this.nm_administradorTextBox.Name = "nm_administradorTextBox";
-            this.nm_administradorTextBox.Size = new System.Drawing.Size(247, 20);
+            this.nm_administradorTextBox.Size = new System.Drawing.Size(375, 20);
             this.nm_administradorTextBox.TabIndex = 23;
             // 
             // sg_nivelTextBox
             // 
             this.sg_nivelTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_administradorBindingSource, "sg_nivel", true));
-            this.sg_nivelTextBox.Location = new System.Drawing.Point(124, 132);
+            this.sg_nivelTextBox.Location = new System.Drawing.Point(82, 178);
             this.sg_nivelTextBox.MaxLength = 1;
             this.sg_nivelTextBox.Name = "sg_nivelTextBox";
-            this.sg_nivelTextBox.Size = new System.Drawing.Size(247, 20);
+            this.sg_nivelTextBox.Size = new System.Drawing.Size(375, 20);
             this.sg_nivelTextBox.TabIndex = 25;
             // 
             // nm_loginTextBox
             // 
             this.nm_loginTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_administradorBindingSource, "nm_login", true));
-            this.nm_loginTextBox.Location = new System.Drawing.Point(124, 158);
+            this.nm_loginTextBox.Location = new System.Drawing.Point(82, 204);
             this.nm_loginTextBox.MaxLength = 20;
             this.nm_loginTextBox.Name = "nm_loginTextBox";
-            this.nm_loginTextBox.Size = new System.Drawing.Size(247, 20);
+            this.nm_loginTextBox.Size = new System.Drawing.Size(375, 20);
             this.nm_loginTextBox.TabIndex = 27;
             // 
             // cd_senhaTextBox
             // 
             this.cd_senhaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_administradorBindingSource, "cd_senha", true));
-            this.cd_senhaTextBox.Location = new System.Drawing.Point(124, 184);
+            this.cd_senhaTextBox.Location = new System.Drawing.Point(82, 230);
             this.cd_senhaTextBox.MaxLength = 20;
             this.cd_senhaTextBox.Name = "cd_senhaTextBox";
-            this.cd_senhaTextBox.Size = new System.Drawing.Size(247, 20);
+            this.cd_senhaTextBox.Size = new System.Drawing.Size(375, 20);
             this.cd_senhaTextBox.TabIndex = 29;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label1.Location = new System.Drawing.Point(177, 35);
+            this.label1.Name = "label1";
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label1.Size = new System.Drawing.Size(173, 51);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Usuários";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.label1.UseCompatibleTextRendering = true;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // frmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(412, 405);
+            this.ClientSize = new System.Drawing.Size(538, 405);
             this.ControlBox = false;
+            this.Controls.Add(this.label1);
             this.Controls.Add(cd_administradorLabel);
             this.Controls.Add(this.cd_administradorTextBox);
             this.Controls.Add(nm_administradorLabel);
@@ -319,5 +339,6 @@
         private System.Windows.Forms.TextBox sg_nivelTextBox;
         private System.Windows.Forms.TextBox nm_loginTextBox;
         private System.Windows.Forms.TextBox cd_senhaTextBox;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -81,6 +81,7 @@ namespace ProjetoContas
             {
                 this.Text = "Clientes";
                 sg_tipoTextBox.Text = "Cliente";
+                labelTitle.Text = "Clientes";
             }
 
         }
