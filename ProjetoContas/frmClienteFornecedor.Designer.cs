@@ -465,14 +465,13 @@
             // 
             // labelTitle
             // 
-            this.labelTitle.AutoSize = true;
             this.labelTitle.BackColor = System.Drawing.SystemColors.Control;
             this.labelTitle.Cursor = System.Windows.Forms.Cursors.Default;
             this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.labelTitle.Location = new System.Drawing.Point(138, 21);
+            this.labelTitle.Location = new System.Drawing.Point(143, 21);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(262, 51);
+            this.labelTitle.Size = new System.Drawing.Size(305, 51);
             this.labelTitle.TabIndex = 40;
             this.labelTitle.Text = "Fornecedores";
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
