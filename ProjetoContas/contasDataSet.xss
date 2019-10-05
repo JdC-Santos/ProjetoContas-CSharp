@@ -7,19 +7,19 @@
 <DiagramLayout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ex:showrelationlabel="False" ViewPortX="-10" ViewPortY="-47" xmlns:ex="urn:schemas-microsoft-com:xml-msdatasource-layout-extended" xmlns="urn:schemas-microsoft-com:xml-msdatasource-layout">
   <Shapes>
     <Shape ID="DesignTable:tb_administrador" ZOrder="4" X="70" Y="70" Height="172" Width="244" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
-    <Shape ID="DesignTable:tb_conta" ZOrder="3" X="384" Y="70" Height="248" Width="194" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="197" />
-    <Shape ID="DesignTable:tb_usuario" ZOrder="2" X="648" Y="70" Height="305" Width="205" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
+    <Shape ID="DesignTable:tb_usuario" ZOrder="3" X="648" Y="70" Height="305" Width="205" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
+    <Shape ID="DesignTable:tb_conta" ZOrder="2" X="375" Y="62" Height="248" Width="194" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="197" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:tb_usuario_tb_conta" ZOrder="1" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>648</X>
-          <Y>194</Y>
+          <Y>186</Y>
         </Point>
         <Point>
-          <X>578</X>
-          <Y>194</Y>
+          <X>569</X>
+          <Y>186</Y>
         </Point>
       </RoutePoints>
     </Connector>

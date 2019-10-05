@@ -51,3 +51,4 @@ C:\Users\aluno3\Downloads\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoCo
 C:\Users\aluno3\Downloads\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.pdb
 C:\Users\aluno3\Downloads\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.csprojAssemblyReference.cache
 C:\Users\aluno3\Downloads\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.frmClienteFornecedor.resources
+C:\Users\aluno3\Downloads\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.frmContasPagar.resources

@@ -19,7 +19,9 @@ namespace ProjetoContas
 
         private void contasAReceberToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmContasPagar cp = new frmContasPagar("receber");
+            cp.Show();
+            Hide();
         }
 
         private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -45,6 +47,13 @@ namespace ProjetoContas
         {
             frmClienteFornecedor fcf = new frmClienteFornecedor("c");
             fcf.Show();
+            Hide();
+        }
+
+        private void contasAPagarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmContasPagar cp = new frmContasPagar("pagar");
+            cp.Show();
             Hide();
         }
     }
