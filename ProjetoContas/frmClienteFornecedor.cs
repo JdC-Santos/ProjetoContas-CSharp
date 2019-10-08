@@ -178,7 +178,8 @@ namespace ProjetoContas
 
         private void validaEndereco(object sender, KeyPressEventArgs e)
         {
-            if (!(e.KeyChar >= '0' && e.KeyChar <= '9') && !(e.KeyChar >= 'a' && e.KeyChar <= 'z') && e.KeyChar != (char)8 )
+            if (!(e.KeyChar >= '0' && e.KeyChar <= '9') && !(e.KeyChar >= 'a' && e.KeyChar <= 'z') && 
+                e.KeyChar != (char)8 && e.KeyChar != (char)44 && e.KeyChar != (char)32)
             {
                 e.KeyChar = (char)0;
             }
