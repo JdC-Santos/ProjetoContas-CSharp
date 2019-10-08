@@ -13,8 +13,6 @@ C:\Users\aluno2\Downloads\ProjetoContas-CSharp\ProjetoContas\bin\Debug\contas_lo
 C:\Users\aluno2\Downloads\ProjetoContas-CSharp\ProjetoContas\bin\Debug\ProjetoContas.exe.config
 C:\Users\aluno2\Downloads\ProjetoContas-CSharp\ProjetoContas\bin\Debug\ProjetoContas.exe
 C:\Users\aluno2\Downloads\ProjetoContas-CSharp\ProjetoContas\bin\Debug\ProjetoContas.pdb
-C:\Users\aluno2\Downloads\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.csprojAssemblyReference.cache
-C:\Users\aluno2\Downloads\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.frmCadastro.resources
 C:\Users\aluno2\Downloads\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.formLogin.resources
 C:\Users\aluno2\Downloads\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.frmPrincipal.resources
 C:\Users\aluno2\Downloads\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.Properties.Resources.resources
@@ -52,3 +50,6 @@ C:\Users\aluno3\Downloads\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoCo
 C:\Users\aluno3\Downloads\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.csprojAssemblyReference.cache
 C:\Users\aluno3\Downloads\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.frmClienteFornecedor.resources
 C:\Users\aluno3\Downloads\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.frmContasPagar.resources
+C:\Users\aluno2\Downloads\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.frmClienteFornecedor.resources
+C:\Users\aluno2\Downloads\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.frmContasPagar.resources
+C:\Users\aluno2\Downloads\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.frmUsuario.resources

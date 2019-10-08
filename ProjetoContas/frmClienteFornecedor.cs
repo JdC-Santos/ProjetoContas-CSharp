@@ -167,5 +167,21 @@ namespace ProjetoContas
             fp.Show();
             Close();
         }
+
+        private void validaFisicoJuridico(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 'f' && e.KeyChar != 'j')
+            {
+                e.KeyChar = (char)0;
+            }
+        }
+
+        private void validaEndereco(object sender, KeyPressEventArgs e)
+        {
+            if (!(e.KeyChar >= '0' && e.KeyChar <= '9') && !(e.KeyChar >= 'a' && e.KeyChar <= 'z') && e.KeyChar != (char)8 )
+            {
+                e.KeyChar = (char)0;
+            }
+        }
     }
 }
