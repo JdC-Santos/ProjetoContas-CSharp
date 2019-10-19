@@ -319,7 +319,7 @@ SELECT cd_conta, dt_emissao, dt_vencimento, vl_compra, dt_pagamento, vl_pago, ds
   <xs:element name="contasDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="contasDataSet" msprop:Generator_UserDSName="contasDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="tb_administrador" msprop:Generator_TableClassName="tb_administradorDataTable" msprop:Generator_TableVarName="tabletb_administrador" msprop:Generator_RowChangedName="tb_administradorRowChanged" msprop:Generator_TablePropName="tb_administrador" msprop:Generator_RowDeletingName="tb_administradorRowDeleting" msprop:Generator_RowChangingName="tb_administradorRowChanging" msprop:Generator_RowEvHandlerName="tb_administradorRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_administradorRowDeleted" msprop:Generator_RowClassName="tb_administradorRow" msprop:Generator_UserTableName="tb_administrador" msprop:Generator_RowEvArgName="tb_administradorRowChangeEvent">
+        <xs:element name="tb_administrador" msprop:Generator_TableClassName="tb_administradorDataTable" msprop:Generator_TableVarName="tabletb_administrador" msprop:Generator_TablePropName="tb_administrador" msprop:Generator_RowDeletingName="tb_administradorRowDeleting" msprop:Generator_RowChangingName="tb_administradorRowChanging" msprop:Generator_RowEvHandlerName="tb_administradorRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_administradorRowDeleted" msprop:Generator_UserTableName="tb_administrador" msprop:Generator_RowChangedName="tb_administradorRowChanged" msprop:Generator_RowEvArgName="tb_administradorRowChangeEvent" msprop:Generator_RowClassName="tb_administradorRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="cd_administrador" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columncd_administrador" msprop:Generator_ColumnPropNameInRow="cd_administrador" msprop:Generator_ColumnPropNameInTable="cd_administradorColumn" msprop:Generator_UserColumnName="cd_administrador" type="xs:int" />
@@ -354,7 +354,7 @@ SELECT cd_conta, dt_emissao, dt_vencimento, vl_compra, dt_pagamento, vl_pago, ds
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tb_usuario" msprop:Generator_TableClassName="tb_usuarioDataTable" msprop:Generator_TableVarName="tabletb_usuario" msprop:Generator_RowChangedName="tb_usuarioRowChanged" msprop:Generator_TablePropName="tb_usuario" msprop:Generator_RowDeletingName="tb_usuarioRowDeleting" msprop:Generator_RowChangingName="tb_usuarioRowChanging" msprop:Generator_RowEvHandlerName="tb_usuarioRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_usuarioRowDeleted" msprop:Generator_RowClassName="tb_usuarioRow" msprop:Generator_UserTableName="tb_usuario" msprop:Generator_RowEvArgName="tb_usuarioRowChangeEvent">
+        <xs:element name="tb_usuario" msprop:Generator_TableClassName="tb_usuarioDataTable" msprop:Generator_TableVarName="tabletb_usuario" msprop:Generator_TablePropName="tb_usuario" msprop:Generator_RowDeletingName="tb_usuarioRowDeleting" msprop:Generator_RowChangingName="tb_usuarioRowChanging" msprop:Generator_RowEvHandlerName="tb_usuarioRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_usuarioRowDeleted" msprop:Generator_UserTableName="tb_usuario" msprop:Generator_RowChangedName="tb_usuarioRowChanged" msprop:Generator_RowEvArgName="tb_usuarioRowChangeEvent" msprop:Generator_RowClassName="tb_usuarioRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="cd_usuario" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columncd_usuario" msprop:Generator_ColumnPropNameInRow="cd_usuario" msprop:Generator_ColumnPropNameInTable="cd_usuarioColumn" msprop:Generator_UserColumnName="cd_usuario" type="xs:int" />
@@ -449,10 +449,17 @@ SELECT cd_conta, dt_emissao, dt_vencimento, vl_compra, dt_pagamento, vl_pago, ds
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="nm_usuario" msprop:Generator_ColumnVarNameInTable="columnnm_usuario" msprop:Generator_ColumnPropNameInRow="nm_usuario" msprop:Generator_ColumnPropNameInTable="nm_usuarioColumn" msprop:Generator_UserColumnName="nm_usuario" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tb_conta" msprop:Generator_TableClassName="tb_contaDataTable" msprop:Generator_TableVarName="tabletb_conta" msprop:Generator_RowChangedName="tb_contaRowChanged" msprop:Generator_TablePropName="tb_conta" msprop:Generator_RowDeletingName="tb_contaRowDeleting" msprop:Generator_RowChangingName="tb_contaRowChanging" msprop:Generator_RowEvHandlerName="tb_contaRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_contaRowDeleted" msprop:Generator_RowClassName="tb_contaRow" msprop:Generator_UserTableName="tb_conta" msprop:Generator_RowEvArgName="tb_contaRowChangeEvent">
+        <xs:element name="tb_conta" msprop:Generator_TableClassName="tb_contaDataTable" msprop:Generator_TableVarName="tabletb_conta" msprop:Generator_TablePropName="tb_conta" msprop:Generator_RowDeletingName="tb_contaRowDeleting" msprop:Generator_RowChangingName="tb_contaRowChanging" msprop:Generator_RowEvHandlerName="tb_contaRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_contaRowDeleted" msprop:Generator_UserTableName="tb_conta" msprop:Generator_RowChangedName="tb_contaRowChanged" msprop:Generator_RowEvArgName="tb_contaRowChangeEvent" msprop:Generator_RowClassName="tb_contaRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="cd_conta" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columncd_conta" msprop:Generator_ColumnPropNameInRow="cd_conta" msprop:Generator_ColumnPropNameInTable="cd_contaColumn" msprop:Generator_UserColumnName="cd_conta" type="xs:int" />
@@ -496,7 +503,7 @@ SELECT cd_conta, dt_emissao, dt_vencimento, vl_compra, dt_pagamento, vl_pago, ds
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="tb_usuario_tb_conta" msdata:parent="tb_usuario" msdata:child="tb_conta" msdata:parentkey="cd_usuario" msdata:childkey="id_usuario" msprop:Generator_UserChildTable="tb_conta" msprop:Generator_ChildPropName="Gettb_contaRows" msprop:Generator_UserRelationName="tb_usuario_tb_conta" msprop:Generator_RelationVarName="relationtb_usuario_tb_conta" msprop:Generator_UserParentTable="tb_usuario" msprop:Generator_ParentPropName="tb_usuarioRow" />
+      <msdata:Relationship name="tb_usuario_tb_conta" msdata:parent="tb_usuario" msdata:child="tb_conta" msdata:parentkey="cd_usuario" msdata:childkey="id_usuario" msprop:Generator_UserChildTable="tb_conta" msprop:Generator_ChildPropName="Gettb_contaRows" msprop:Generator_UserRelationName="tb_usuario_tb_conta" msprop:Generator_ParentPropName="tb_usuarioRow" msprop:Generator_RelationVarName="relationtb_usuario_tb_conta" msprop:Generator_UserParentTable="tb_usuario" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

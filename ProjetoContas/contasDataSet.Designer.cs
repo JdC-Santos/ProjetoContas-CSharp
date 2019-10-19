@@ -709,6 +709,8 @@ namespace ProjetoContas {
             
             private global::System.Data.DataColumn columncd_ie;
             
+            private global::System.Data.DataColumn columnnm_usuario;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public tb_usuarioDataTable() {
@@ -856,6 +858,14 @@ namespace ProjetoContas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn nm_usuarioColumn {
+                get {
+                    return this.columnnm_usuario;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -891,7 +901,7 @@ namespace ProjetoContas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public tb_usuarioRow Addtb_usuarioRow(string ds_usuario, string ds_endereco, string nm_cidade, string nm_bairro, string sg_estado, string cd_cep, string ds_telefone, string ds_email, string sg_tipo, string cd_cpf, string cd_cnpj, string cd_rg, string cd_ie) {
+            public tb_usuarioRow Addtb_usuarioRow(string ds_usuario, string ds_endereco, string nm_cidade, string nm_bairro, string sg_estado, string cd_cep, string ds_telefone, string ds_email, string sg_tipo, string cd_cpf, string cd_cnpj, string cd_rg, string cd_ie, string nm_usuario) {
                 tb_usuarioRow rowtb_usuarioRow = ((tb_usuarioRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -907,7 +917,8 @@ namespace ProjetoContas {
                         cd_cpf,
                         cd_cnpj,
                         cd_rg,
-                        cd_ie};
+                        cd_ie,
+                        nm_usuario};
                 rowtb_usuarioRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtb_usuarioRow);
                 return rowtb_usuarioRow;
@@ -951,6 +962,7 @@ namespace ProjetoContas {
                 this.columncd_cnpj = base.Columns["cd_cnpj"];
                 this.columncd_rg = base.Columns["cd_rg"];
                 this.columncd_ie = base.Columns["cd_ie"];
+                this.columnnm_usuario = base.Columns["nm_usuario"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -984,6 +996,8 @@ namespace ProjetoContas {
                 base.Columns.Add(this.columncd_rg);
                 this.columncd_ie = new global::System.Data.DataColumn("cd_ie", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncd_ie);
+                this.columnnm_usuario = new global::System.Data.DataColumn("nm_usuario", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnm_usuario);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columncd_usuario}, true));
                 this.columncd_usuario.AutoIncrement = true;
@@ -1005,6 +1019,7 @@ namespace ProjetoContas {
                 this.columncd_cnpj.MaxLength = 18;
                 this.columncd_rg.MaxLength = 15;
                 this.columncd_ie.MaxLength = 15;
+                this.columnnm_usuario.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1809,6 +1824,22 @@ namespace ProjetoContas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string nm_usuario {
+                get {
+                    try {
+                        return ((string)(this[this.tabletb_usuario.nm_usuarioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'nm_usuario\' na tabela \'tb_usuario\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletb_usuario.nm_usuarioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Isds_enderecoNull() {
                 return this.IsNull(this.tabletb_usuario.ds_enderecoColumn);
             }
@@ -1949,6 +1980,18 @@ namespace ProjetoContas {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Setcd_ieNull() {
                 this[this.tabletb_usuario.cd_ieColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isnm_usuarioNull() {
+                return this.IsNull(this.tabletb_usuario.nm_usuarioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setnm_usuarioNull() {
+                this[this.tabletb_usuario.nm_usuarioColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
