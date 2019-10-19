@@ -154,5 +154,11 @@ namespace ProjetoContas
         {
 
         }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            frmPesquisaUsuario fpu = new frmPesquisaUsuario();
+            fpu.Show();
+        }
     }
 }

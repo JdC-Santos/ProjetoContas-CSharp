@@ -44,22 +44,22 @@
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.contasDataSet = new ProjetoContas.contasDataSet();
-            this.tb_administradorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tb_administradorTableAdapter = new ProjetoContas.contasDataSetTableAdapters.tb_administradorTableAdapter();
             this.cd_administradorTextBox = new System.Windows.Forms.TextBox();
             this.nm_administradorTextBox = new System.Windows.Forms.TextBox();
             this.sg_nivelTextBox = new System.Windows.Forms.TextBox();
             this.nm_loginTextBox = new System.Windows.Forms.TextBox();
             this.cd_senhaTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.tb_administradorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.contasDataSet = new ProjetoContas.contasDataSet();
+            this.tb_administradorTableAdapter = new ProjetoContas.contasDataSetTableAdapters.tb_administradorTableAdapter();
             cd_administradorLabel = new System.Windows.Forms.Label();
             nm_administradorLabel = new System.Windows.Forms.Label();
             sg_nivelLabel = new System.Windows.Forms.Label();
             nm_loginLabel = new System.Windows.Forms.Label();
             cd_senhaLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.contasDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_administradorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contasDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // cd_administradorLabel
@@ -186,6 +186,7 @@
             this.btnPesquisar.TabIndex = 17;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // btnCancelar
             // 
@@ -206,20 +207,6 @@
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
-            // contasDataSet
-            // 
-            this.contasDataSet.DataSetName = "contasDataSet";
-            this.contasDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tb_administradorBindingSource
-            // 
-            this.tb_administradorBindingSource.DataMember = "tb_administrador";
-            this.tb_administradorBindingSource.DataSource = this.contasDataSet;
-            // 
-            // tb_administradorTableAdapter
-            // 
-            this.tb_administradorTableAdapter.ClearBeforeFill = true;
             // 
             // cd_administradorTextBox
             // 
@@ -283,6 +270,20 @@
             this.label1.UseCompatibleTextRendering = true;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // tb_administradorBindingSource
+            // 
+            this.tb_administradorBindingSource.DataMember = "tb_administrador";
+            this.tb_administradorBindingSource.DataSource = this.contasDataSet;
+            // 
+            // contasDataSet
+            // 
+            this.contasDataSet.DataSetName = "contasDataSet";
+            this.contasDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tb_administradorTableAdapter
+            // 
+            this.tb_administradorTableAdapter.ClearBeforeFill = true;
+            // 
             // frmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -313,8 +314,8 @@
             this.Name = "frmUsuario";
             this.Text = "Usuários";
             this.Load += new System.EventHandler(this.frmCadastro_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.contasDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_administradorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contasDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
