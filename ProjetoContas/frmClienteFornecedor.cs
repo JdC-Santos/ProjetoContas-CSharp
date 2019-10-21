@@ -23,6 +23,7 @@ namespace ProjetoContas
         public void Habilita()
         {
             cd_usuarioTextBox.Enabled = false;
+            nm_usuarioTextBox.Enabled = true;
             ds_usuarioTextBox.Enabled = true;
             ds_enderecoTextBox.Enabled = true;
             nm_cidadeTextBox.Enabled = true;
@@ -36,12 +37,12 @@ namespace ProjetoContas
             cd_cnpjTextBox.Enabled = true;
             cd_rgTextBox.Enabled = true;
             cd_ieTextBox.Enabled = true;
-
         }
 
         public void Desabilita()
         {
             cd_usuarioTextBox.Enabled = false;
+            nm_usuarioTextBox.Enabled = false;
             ds_usuarioTextBox.Enabled = false;
             ds_enderecoTextBox.Enabled = false;
             nm_cidadeTextBox.Enabled = false;
@@ -183,6 +184,12 @@ namespace ProjetoContas
             {
                 e.KeyChar = (char)0;
             }
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            frmPesquisaClienteFornecedor fpcf = new frmPesquisaClienteFornecedor(this.tipo);
+            fpcf.Show();
         }
     }
 }

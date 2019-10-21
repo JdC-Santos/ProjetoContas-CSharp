@@ -44,8 +44,6 @@
             System.Windows.Forms.Label cd_rgLabel;
             System.Windows.Forms.Label cd_ieLabel;
             System.Windows.Forms.Label nm_usuarioLabel;
-            this.tb_usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.contasDataSet = new ProjetoContas.contasDataSet();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
@@ -56,8 +54,6 @@
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
-            this.tb_usuarioTableAdapter = new ProjetoContas.contasDataSetTableAdapters.tb_usuarioTableAdapter();
-            this.tableAdapterManager = new ProjetoContas.contasDataSetTableAdapters.TableAdapterManager();
             this.labelTitle = new System.Windows.Forms.Label();
             this.cd_usuarioTextBox = new System.Windows.Forms.TextBox();
             this.ds_usuarioTextBox = new System.Windows.Forms.TextBox();
@@ -73,6 +69,10 @@
             this.cd_cnpjTextBox = new System.Windows.Forms.TextBox();
             this.cd_rgTextBox = new System.Windows.Forms.TextBox();
             this.cd_ieTextBox = new System.Windows.Forms.TextBox();
+            this.tb_usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.contasDataSet = new ProjetoContas.contasDataSet();
+            this.tb_usuarioTableAdapter = new ProjetoContas.contasDataSetTableAdapters.tb_usuarioTableAdapter();
+            this.tableAdapterManager = new ProjetoContas.contasDataSetTableAdapters.TableAdapterManager();
             this.nm_usuarioTextBox = new System.Windows.Forms.TextBox();
             cd_usuarioLabel = new System.Windows.Forms.Label();
             ds_usuarioLabel = new System.Windows.Forms.Label();
@@ -93,15 +93,131 @@
             ((System.ComponentModel.ISupportInitialize)(this.contasDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // tb_usuarioBindingSource
+            // cd_usuarioLabel
             // 
-            this.tb_usuarioBindingSource.DataMember = "tb_usuario";
-            this.tb_usuarioBindingSource.DataSource = this.contasDataSet;
+            cd_usuarioLabel.AutoSize = true;
+            cd_usuarioLabel.Location = new System.Drawing.Point(66, 93);
+            cd_usuarioLabel.Name = "cd_usuarioLabel";
+            cd_usuarioLabel.Size = new System.Drawing.Size(39, 13);
+            cd_usuarioLabel.TabIndex = 40;
+            cd_usuarioLabel.Text = "código";
             // 
-            // contasDataSet
+            // ds_usuarioLabel
             // 
-            this.contasDataSet.DataSetName = "contasDataSet";
-            this.contasDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            ds_usuarioLabel.AutoSize = true;
+            ds_usuarioLabel.Location = new System.Drawing.Point(81, 143);
+            ds_usuarioLabel.Name = "ds_usuarioLabel";
+            ds_usuarioLabel.Size = new System.Drawing.Size(24, 13);
+            ds_usuarioLabel.TabIndex = 42;
+            ds_usuarioLabel.Text = "tipo";
+            // 
+            // ds_enderecoLabel
+            // 
+            ds_enderecoLabel.AutoSize = true;
+            ds_enderecoLabel.Location = new System.Drawing.Point(53, 169);
+            ds_enderecoLabel.Name = "ds_enderecoLabel";
+            ds_enderecoLabel.Size = new System.Drawing.Size(52, 13);
+            ds_enderecoLabel.TabIndex = 44;
+            ds_enderecoLabel.Text = "endereço";
+            // 
+            // nm_cidadeLabel
+            // 
+            nm_cidadeLabel.AutoSize = true;
+            nm_cidadeLabel.Location = new System.Drawing.Point(66, 195);
+            nm_cidadeLabel.Name = "nm_cidadeLabel";
+            nm_cidadeLabel.Size = new System.Drawing.Size(39, 13);
+            nm_cidadeLabel.TabIndex = 46;
+            nm_cidadeLabel.Text = "cidade";
+            // 
+            // nm_bairroLabel
+            // 
+            nm_bairroLabel.AutoSize = true;
+            nm_bairroLabel.Location = new System.Drawing.Point(72, 221);
+            nm_bairroLabel.Name = "nm_bairroLabel";
+            nm_bairroLabel.Size = new System.Drawing.Size(33, 13);
+            nm_bairroLabel.TabIndex = 48;
+            nm_bairroLabel.Text = "bairro";
+            // 
+            // sg_estadoLabel
+            // 
+            sg_estadoLabel.AutoSize = true;
+            sg_estadoLabel.Location = new System.Drawing.Point(66, 247);
+            sg_estadoLabel.Name = "sg_estadoLabel";
+            sg_estadoLabel.Size = new System.Drawing.Size(39, 13);
+            sg_estadoLabel.TabIndex = 50;
+            sg_estadoLabel.Text = "estado";
+            // 
+            // cd_cepLabel
+            // 
+            cd_cepLabel.AutoSize = true;
+            cd_cepLabel.Location = new System.Drawing.Point(80, 273);
+            cd_cepLabel.Name = "cd_cepLabel";
+            cd_cepLabel.Size = new System.Drawing.Size(25, 13);
+            cd_cepLabel.TabIndex = 52;
+            cd_cepLabel.Text = "cep";
+            // 
+            // ds_telefoneLabel
+            // 
+            ds_telefoneLabel.AutoSize = true;
+            ds_telefoneLabel.Location = new System.Drawing.Point(60, 299);
+            ds_telefoneLabel.Name = "ds_telefoneLabel";
+            ds_telefoneLabel.Size = new System.Drawing.Size(45, 13);
+            ds_telefoneLabel.TabIndex = 54;
+            ds_telefoneLabel.Text = "telefone";
+            // 
+            // ds_emailLabel
+            // 
+            ds_emailLabel.AutoSize = true;
+            ds_emailLabel.Location = new System.Drawing.Point(74, 325);
+            ds_emailLabel.Name = "ds_emailLabel";
+            ds_emailLabel.Size = new System.Drawing.Size(31, 13);
+            ds_emailLabel.TabIndex = 56;
+            ds_emailLabel.Text = "email";
+            // 
+            // sg_tipoLabel
+            // 
+            sg_tipoLabel.AutoSize = true;
+            sg_tipoLabel.Location = new System.Drawing.Point(81, 351);
+            sg_tipoLabel.Name = "sg_tipoLabel";
+            sg_tipoLabel.Size = new System.Drawing.Size(24, 13);
+            sg_tipoLabel.TabIndex = 58;
+            sg_tipoLabel.Text = "tipo";
+            // 
+            // cd_cpfLabel
+            // 
+            cd_cpfLabel.AutoSize = true;
+            cd_cpfLabel.Location = new System.Drawing.Point(83, 377);
+            cd_cpfLabel.Name = "cd_cpfLabel";
+            cd_cpfLabel.Size = new System.Drawing.Size(22, 13);
+            cd_cpfLabel.TabIndex = 60;
+            cd_cpfLabel.Text = "cpf";
+            // 
+            // cd_cnpjLabel
+            // 
+            cd_cnpjLabel.AutoSize = true;
+            cd_cnpjLabel.Location = new System.Drawing.Point(78, 403);
+            cd_cnpjLabel.Name = "cd_cnpjLabel";
+            cd_cnpjLabel.Size = new System.Drawing.Size(27, 13);
+            cd_cnpjLabel.TabIndex = 62;
+            cd_cnpjLabel.Text = "cnpj";
+            // 
+            // cd_rgLabel
+            // 
+            cd_rgLabel.AutoSize = true;
+            cd_rgLabel.Location = new System.Drawing.Point(89, 429);
+            cd_rgLabel.Name = "cd_rgLabel";
+            cd_rgLabel.Size = new System.Drawing.Size(16, 13);
+            cd_rgLabel.TabIndex = 64;
+            cd_rgLabel.Text = "rg";
+            // 
+            // cd_ieLabel
+            // 
+            cd_ieLabel.AutoSize = true;
+            cd_ieLabel.Location = new System.Drawing.Point(90, 455);
+            cd_ieLabel.Name = "cd_ieLabel";
+            cd_ieLabel.Size = new System.Drawing.Size(15, 13);
+            cd_ieLabel.TabIndex = 66;
+            cd_ieLabel.Text = "ie";
             // 
             // btnSalvar
             // 
@@ -131,6 +247,7 @@
             this.btnPesquisar.TabIndex = 36;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // btnImprimir
             // 
@@ -203,18 +320,6 @@
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
-            // tb_usuarioTableAdapter
-            // 
-            this.tb_usuarioTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.tb_administradorTableAdapter = null;
-            this.tableAdapterManager.tb_contaTableAdapter = null;
-            this.tableAdapterManager.tb_usuarioTableAdapter = this.tb_usuarioTableAdapter;
-            this.tableAdapterManager.UpdateOrder = ProjetoContas.contasDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
             // labelTitle
             // 
             this.labelTitle.BackColor = System.Drawing.SystemColors.Control;
@@ -229,260 +334,170 @@
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.labelTitle.UseCompatibleTextRendering = true;
             // 
-            // cd_usuarioLabel
-            // 
-            cd_usuarioLabel.AutoSize = true;
-            cd_usuarioLabel.Location = new System.Drawing.Point(86, 93);
-            cd_usuarioLabel.Name = "cd_usuarioLabel";
-            cd_usuarioLabel.Size = new System.Drawing.Size(59, 13);
-            cd_usuarioLabel.TabIndex = 40;
-            cd_usuarioLabel.Text = "cd usuario:";
-            // 
             // cd_usuarioTextBox
             // 
             this.cd_usuarioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_usuarioBindingSource, "cd_usuario", true));
-            this.cd_usuarioTextBox.Location = new System.Drawing.Point(186, 90);
+            this.cd_usuarioTextBox.Location = new System.Drawing.Point(111, 90);
+            this.cd_usuarioTextBox.MaxLength = 10000;
             this.cd_usuarioTextBox.Name = "cd_usuarioTextBox";
-            this.cd_usuarioTextBox.Size = new System.Drawing.Size(300, 20);
+            this.cd_usuarioTextBox.Size = new System.Drawing.Size(375, 20);
             this.cd_usuarioTextBox.TabIndex = 41;
-            // 
-            // ds_usuarioLabel
-            // 
-            ds_usuarioLabel.AutoSize = true;
-            ds_usuarioLabel.Location = new System.Drawing.Point(86, 119);
-            ds_usuarioLabel.Name = "ds_usuarioLabel";
-            ds_usuarioLabel.Size = new System.Drawing.Size(58, 13);
-            ds_usuarioLabel.TabIndex = 42;
-            ds_usuarioLabel.Text = "ds usuario:";
             // 
             // ds_usuarioTextBox
             // 
             this.ds_usuarioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_usuarioBindingSource, "ds_usuario", true));
-            this.ds_usuarioTextBox.Location = new System.Drawing.Point(186, 116);
+            this.ds_usuarioTextBox.Location = new System.Drawing.Point(111, 140);
+            this.ds_usuarioTextBox.MaxLength = 1;
             this.ds_usuarioTextBox.Name = "ds_usuarioTextBox";
-            this.ds_usuarioTextBox.Size = new System.Drawing.Size(300, 20);
+            this.ds_usuarioTextBox.Size = new System.Drawing.Size(375, 20);
             this.ds_usuarioTextBox.TabIndex = 43;
-            // 
-            // ds_enderecoLabel
-            // 
-            ds_enderecoLabel.AutoSize = true;
-            ds_enderecoLabel.Location = new System.Drawing.Point(86, 145);
-            ds_enderecoLabel.Name = "ds_enderecoLabel";
-            ds_enderecoLabel.Size = new System.Drawing.Size(69, 13);
-            ds_enderecoLabel.TabIndex = 44;
-            ds_enderecoLabel.Text = "ds endereco:";
             // 
             // ds_enderecoTextBox
             // 
             this.ds_enderecoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_usuarioBindingSource, "ds_endereco", true));
-            this.ds_enderecoTextBox.Location = new System.Drawing.Point(186, 142);
+            this.ds_enderecoTextBox.Location = new System.Drawing.Point(111, 166);
+            this.ds_enderecoTextBox.MaxLength = 50;
             this.ds_enderecoTextBox.Name = "ds_enderecoTextBox";
-            this.ds_enderecoTextBox.Size = new System.Drawing.Size(300, 20);
+            this.ds_enderecoTextBox.Size = new System.Drawing.Size(375, 20);
             this.ds_enderecoTextBox.TabIndex = 45;
-            // 
-            // nm_cidadeLabel
-            // 
-            nm_cidadeLabel.AutoSize = true;
-            nm_cidadeLabel.Location = new System.Drawing.Point(86, 171);
-            nm_cidadeLabel.Name = "nm_cidadeLabel";
-            nm_cidadeLabel.Size = new System.Drawing.Size(59, 13);
-            nm_cidadeLabel.TabIndex = 46;
-            nm_cidadeLabel.Text = "nm cidade:";
             // 
             // nm_cidadeTextBox
             // 
             this.nm_cidadeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_usuarioBindingSource, "nm_cidade", true));
-            this.nm_cidadeTextBox.Location = new System.Drawing.Point(186, 168);
+            this.nm_cidadeTextBox.Location = new System.Drawing.Point(111, 192);
+            this.nm_cidadeTextBox.MaxLength = 50;
             this.nm_cidadeTextBox.Name = "nm_cidadeTextBox";
-            this.nm_cidadeTextBox.Size = new System.Drawing.Size(300, 20);
+            this.nm_cidadeTextBox.Size = new System.Drawing.Size(375, 20);
             this.nm_cidadeTextBox.TabIndex = 47;
-            // 
-            // nm_bairroLabel
-            // 
-            nm_bairroLabel.AutoSize = true;
-            nm_bairroLabel.Location = new System.Drawing.Point(86, 197);
-            nm_bairroLabel.Name = "nm_bairroLabel";
-            nm_bairroLabel.Size = new System.Drawing.Size(53, 13);
-            nm_bairroLabel.TabIndex = 48;
-            nm_bairroLabel.Text = "nm bairro:";
             // 
             // nm_bairroTextBox
             // 
             this.nm_bairroTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_usuarioBindingSource, "nm_bairro", true));
-            this.nm_bairroTextBox.Location = new System.Drawing.Point(186, 194);
+            this.nm_bairroTextBox.Location = new System.Drawing.Point(111, 218);
+            this.nm_bairroTextBox.MaxLength = 50;
             this.nm_bairroTextBox.Name = "nm_bairroTextBox";
-            this.nm_bairroTextBox.Size = new System.Drawing.Size(300, 20);
+            this.nm_bairroTextBox.Size = new System.Drawing.Size(375, 20);
             this.nm_bairroTextBox.TabIndex = 49;
-            // 
-            // sg_estadoLabel
-            // 
-            sg_estadoLabel.AutoSize = true;
-            sg_estadoLabel.Location = new System.Drawing.Point(86, 223);
-            sg_estadoLabel.Name = "sg_estadoLabel";
-            sg_estadoLabel.Size = new System.Drawing.Size(56, 13);
-            sg_estadoLabel.TabIndex = 50;
-            sg_estadoLabel.Text = "sg estado:";
             // 
             // sg_estadoTextBox
             // 
             this.sg_estadoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_usuarioBindingSource, "sg_estado", true));
-            this.sg_estadoTextBox.Location = new System.Drawing.Point(186, 220);
+            this.sg_estadoTextBox.Location = new System.Drawing.Point(111, 244);
+            this.sg_estadoTextBox.MaxLength = 2;
             this.sg_estadoTextBox.Name = "sg_estadoTextBox";
-            this.sg_estadoTextBox.Size = new System.Drawing.Size(300, 20);
+            this.sg_estadoTextBox.Size = new System.Drawing.Size(375, 20);
             this.sg_estadoTextBox.TabIndex = 51;
-            // 
-            // cd_cepLabel
-            // 
-            cd_cepLabel.AutoSize = true;
-            cd_cepLabel.Location = new System.Drawing.Point(86, 249);
-            cd_cepLabel.Name = "cd_cepLabel";
-            cd_cepLabel.Size = new System.Drawing.Size(43, 13);
-            cd_cepLabel.TabIndex = 52;
-            cd_cepLabel.Text = "cd cep:";
             // 
             // cd_cepTextBox
             // 
             this.cd_cepTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_usuarioBindingSource, "cd_cep", true));
-            this.cd_cepTextBox.Location = new System.Drawing.Point(186, 246);
+            this.cd_cepTextBox.Location = new System.Drawing.Point(111, 270);
+            this.cd_cepTextBox.MaxLength = 11;
             this.cd_cepTextBox.Name = "cd_cepTextBox";
-            this.cd_cepTextBox.Size = new System.Drawing.Size(300, 20);
+            this.cd_cepTextBox.Size = new System.Drawing.Size(375, 20);
             this.cd_cepTextBox.TabIndex = 53;
-            // 
-            // ds_telefoneLabel
-            // 
-            ds_telefoneLabel.AutoSize = true;
-            ds_telefoneLabel.Location = new System.Drawing.Point(86, 275);
-            ds_telefoneLabel.Name = "ds_telefoneLabel";
-            ds_telefoneLabel.Size = new System.Drawing.Size(62, 13);
-            ds_telefoneLabel.TabIndex = 54;
-            ds_telefoneLabel.Text = "ds telefone:";
             // 
             // ds_telefoneTextBox
             // 
             this.ds_telefoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_usuarioBindingSource, "ds_telefone", true));
-            this.ds_telefoneTextBox.Location = new System.Drawing.Point(186, 272);
+            this.ds_telefoneTextBox.Location = new System.Drawing.Point(111, 296);
+            this.ds_telefoneTextBox.MaxLength = 15;
             this.ds_telefoneTextBox.Name = "ds_telefoneTextBox";
-            this.ds_telefoneTextBox.Size = new System.Drawing.Size(300, 20);
+            this.ds_telefoneTextBox.Size = new System.Drawing.Size(375, 20);
             this.ds_telefoneTextBox.TabIndex = 55;
-            // 
-            // ds_emailLabel
-            // 
-            ds_emailLabel.AutoSize = true;
-            ds_emailLabel.Location = new System.Drawing.Point(86, 301);
-            ds_emailLabel.Name = "ds_emailLabel";
-            ds_emailLabel.Size = new System.Drawing.Size(48, 13);
-            ds_emailLabel.TabIndex = 56;
-            ds_emailLabel.Text = "ds email:";
             // 
             // ds_emailTextBox
             // 
             this.ds_emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_usuarioBindingSource, "ds_email", true));
-            this.ds_emailTextBox.Location = new System.Drawing.Point(186, 298);
+            this.ds_emailTextBox.Location = new System.Drawing.Point(111, 322);
+            this.ds_emailTextBox.MaxLength = 20;
             this.ds_emailTextBox.Name = "ds_emailTextBox";
-            this.ds_emailTextBox.Size = new System.Drawing.Size(300, 20);
+            this.ds_emailTextBox.Size = new System.Drawing.Size(375, 20);
             this.ds_emailTextBox.TabIndex = 57;
-            // 
-            // sg_tipoLabel
-            // 
-            sg_tipoLabel.AutoSize = true;
-            sg_tipoLabel.Location = new System.Drawing.Point(86, 327);
-            sg_tipoLabel.Name = "sg_tipoLabel";
-            sg_tipoLabel.Size = new System.Drawing.Size(41, 13);
-            sg_tipoLabel.TabIndex = 58;
-            sg_tipoLabel.Text = "sg tipo:";
             // 
             // sg_tipoTextBox
             // 
             this.sg_tipoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_usuarioBindingSource, "sg_tipo", true));
-            this.sg_tipoTextBox.Location = new System.Drawing.Point(186, 324);
+            this.sg_tipoTextBox.Location = new System.Drawing.Point(111, 348);
+            this.sg_tipoTextBox.MaxLength = 20;
             this.sg_tipoTextBox.Name = "sg_tipoTextBox";
-            this.sg_tipoTextBox.Size = new System.Drawing.Size(300, 20);
+            this.sg_tipoTextBox.Size = new System.Drawing.Size(375, 20);
             this.sg_tipoTextBox.TabIndex = 59;
-            // 
-            // cd_cpfLabel
-            // 
-            cd_cpfLabel.AutoSize = true;
-            cd_cpfLabel.Location = new System.Drawing.Point(86, 353);
-            cd_cpfLabel.Name = "cd_cpfLabel";
-            cd_cpfLabel.Size = new System.Drawing.Size(40, 13);
-            cd_cpfLabel.TabIndex = 60;
-            cd_cpfLabel.Text = "cd cpf:";
             // 
             // cd_cpfTextBox
             // 
             this.cd_cpfTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_usuarioBindingSource, "cd_cpf", true));
-            this.cd_cpfTextBox.Location = new System.Drawing.Point(186, 350);
+            this.cd_cpfTextBox.Location = new System.Drawing.Point(111, 374);
+            this.cd_cpfTextBox.MaxLength = 12;
             this.cd_cpfTextBox.Name = "cd_cpfTextBox";
-            this.cd_cpfTextBox.Size = new System.Drawing.Size(300, 20);
+            this.cd_cpfTextBox.Size = new System.Drawing.Size(375, 20);
             this.cd_cpfTextBox.TabIndex = 61;
-            // 
-            // cd_cnpjLabel
-            // 
-            cd_cnpjLabel.AutoSize = true;
-            cd_cnpjLabel.Location = new System.Drawing.Point(86, 379);
-            cd_cnpjLabel.Name = "cd_cnpjLabel";
-            cd_cnpjLabel.Size = new System.Drawing.Size(45, 13);
-            cd_cnpjLabel.TabIndex = 62;
-            cd_cnpjLabel.Text = "cd cnpj:";
             // 
             // cd_cnpjTextBox
             // 
             this.cd_cnpjTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_usuarioBindingSource, "cd_cnpj", true));
-            this.cd_cnpjTextBox.Location = new System.Drawing.Point(186, 376);
+            this.cd_cnpjTextBox.Location = new System.Drawing.Point(111, 400);
+            this.cd_cnpjTextBox.MaxLength = 15;
             this.cd_cnpjTextBox.Name = "cd_cnpjTextBox";
-            this.cd_cnpjTextBox.Size = new System.Drawing.Size(300, 20);
+            this.cd_cnpjTextBox.Size = new System.Drawing.Size(375, 20);
             this.cd_cnpjTextBox.TabIndex = 63;
-            // 
-            // cd_rgLabel
-            // 
-            cd_rgLabel.AutoSize = true;
-            cd_rgLabel.Location = new System.Drawing.Point(86, 405);
-            cd_rgLabel.Name = "cd_rgLabel";
-            cd_rgLabel.Size = new System.Drawing.Size(34, 13);
-            cd_rgLabel.TabIndex = 64;
-            cd_rgLabel.Text = "cd rg:";
             // 
             // cd_rgTextBox
             // 
             this.cd_rgTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_usuarioBindingSource, "cd_rg", true));
-            this.cd_rgTextBox.Location = new System.Drawing.Point(186, 402);
+            this.cd_rgTextBox.Location = new System.Drawing.Point(111, 426);
+            this.cd_rgTextBox.MaxLength = 15;
             this.cd_rgTextBox.Name = "cd_rgTextBox";
-            this.cd_rgTextBox.Size = new System.Drawing.Size(300, 20);
+            this.cd_rgTextBox.Size = new System.Drawing.Size(375, 20);
             this.cd_rgTextBox.TabIndex = 65;
-            // 
-            // cd_ieLabel
-            // 
-            cd_ieLabel.AutoSize = true;
-            cd_ieLabel.Location = new System.Drawing.Point(86, 431);
-            cd_ieLabel.Name = "cd_ieLabel";
-            cd_ieLabel.Size = new System.Drawing.Size(33, 13);
-            cd_ieLabel.TabIndex = 66;
-            cd_ieLabel.Text = "cd ie:";
             // 
             // cd_ieTextBox
             // 
             this.cd_ieTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_usuarioBindingSource, "cd_ie", true));
-            this.cd_ieTextBox.Location = new System.Drawing.Point(186, 428);
+            this.cd_ieTextBox.Location = new System.Drawing.Point(111, 452);
+            this.cd_ieTextBox.MaxLength = 20;
             this.cd_ieTextBox.Name = "cd_ieTextBox";
-            this.cd_ieTextBox.Size = new System.Drawing.Size(300, 20);
+            this.cd_ieTextBox.Size = new System.Drawing.Size(375, 20);
             this.cd_ieTextBox.TabIndex = 67;
+            // 
+            // tb_usuarioBindingSource
+            // 
+            this.tb_usuarioBindingSource.DataMember = "tb_usuario";
+            this.tb_usuarioBindingSource.DataSource = this.contasDataSet;
+            // 
+            // contasDataSet
+            // 
+            this.contasDataSet.DataSetName = "contasDataSet";
+            this.contasDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tb_usuarioTableAdapter
+            // 
+            this.tb_usuarioTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.tb_administradorTableAdapter = null;
+            this.tableAdapterManager.tb_contaTableAdapter = null;
+            this.tableAdapterManager.tb_usuarioTableAdapter = this.tb_usuarioTableAdapter;
+            this.tableAdapterManager.UpdateOrder = ProjetoContas.contasDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // nm_usuarioLabel
             // 
             nm_usuarioLabel.AutoSize = true;
-            nm_usuarioLabel.Location = new System.Drawing.Point(86, 457);
+            nm_usuarioLabel.Location = new System.Drawing.Point(74, 118);
             nm_usuarioLabel.Name = "nm_usuarioLabel";
-            nm_usuarioLabel.Size = new System.Drawing.Size(61, 13);
-            nm_usuarioLabel.TabIndex = 68;
-            nm_usuarioLabel.Text = "nm usuario:";
+            nm_usuarioLabel.Size = new System.Drawing.Size(33, 13);
+            nm_usuarioLabel.TabIndex = 67;
+            nm_usuarioLabel.Text = "nome";
             // 
             // nm_usuarioTextBox
             // 
             this.nm_usuarioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_usuarioBindingSource, "nm_usuario", true));
-            this.nm_usuarioTextBox.Location = new System.Drawing.Point(186, 454);
+            this.nm_usuarioTextBox.Location = new System.Drawing.Point(111, 114);
             this.nm_usuarioTextBox.Name = "nm_usuarioTextBox";
-            this.nm_usuarioTextBox.Size = new System.Drawing.Size(300, 20);
-            this.nm_usuarioTextBox.TabIndex = 69;
+            this.nm_usuarioTextBox.Size = new System.Drawing.Size(375, 20);
+            this.nm_usuarioTextBox.TabIndex = 68;
             // 
             // frmClienteFornecedor
             // 
@@ -490,6 +505,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(579, 600);
             this.ControlBox = false;
+            this.Controls.Add(nm_usuarioLabel);
+            this.Controls.Add(this.nm_usuarioTextBox);
             this.Controls.Add(cd_usuarioLabel);
             this.Controls.Add(this.cd_usuarioTextBox);
             this.Controls.Add(ds_usuarioLabel);
@@ -518,8 +535,6 @@
             this.Controls.Add(this.cd_rgTextBox);
             this.Controls.Add(cd_ieLabel);
             this.Controls.Add(this.cd_ieTextBox);
-            this.Controls.Add(nm_usuarioLabel);
-            this.Controls.Add(this.nm_usuarioTextBox);
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnCancelar);
