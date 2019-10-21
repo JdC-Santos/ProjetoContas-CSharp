@@ -148,7 +148,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_administradorDataGridView);
             this.Name = "frmPesquisaUsuario";
-            this.Text = "frmPesquisaUsuario";
+            this.Text = "Pesquisar Administrador";
             this.Load += new System.EventHandler(this.frmPesquisaUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.contasDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_administradorBindingSource)).EndInit();

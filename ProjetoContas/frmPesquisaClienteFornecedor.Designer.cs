@@ -34,10 +34,6 @@
             this.tb_usuarioTableAdapter = new ProjetoContas.contasDataSetTableAdapters.tb_usuarioTableAdapter();
             this.tableAdapterManager = new ProjetoContas.contasDataSetTableAdapters.TableAdapterManager();
             this.tb_usuarioDataGridView = new System.Windows.Forms.DataGridView();
-            this.btnPesquisar = new System.Windows.Forms.Button();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnSair = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +48,10 @@
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnSair = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.contasDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_usuarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_usuarioDataGridView)).BeginInit();
@@ -106,44 +106,6 @@
             this.tb_usuarioDataGridView.ReadOnly = true;
             this.tb_usuarioDataGridView.Size = new System.Drawing.Size(707, 290);
             this.tb_usuarioDataGridView.TabIndex = 1;
-            // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.Location = new System.Drawing.Point(613, 33);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(75, 23);
-            this.btnPesquisar.TabIndex = 20;
-            this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.UseVisualStyleBackColor = true;
-            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
-            // 
-            // txtNome
-            // 
-            this.txtNome.Location = new System.Drawing.Point(215, 34);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(375, 20);
-            this.txtNome.TabIndex = 19;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(141, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 13);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Nome: ";
-            // 
-            // btnSair
-            // 
-            this.btnSair.BackColor = System.Drawing.SystemColors.Info;
-            this.btnSair.ForeColor = System.Drawing.Color.Red;
-            this.btnSair.Location = new System.Drawing.Point(365, 400);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(75, 23);
-            this.btnSair.TabIndex = 21;
-            this.btnSair.Text = "Sair";
-            this.btnSair.UseVisualStyleBackColor = false;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -243,6 +205,44 @@
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             this.dataGridViewTextBoxColumn14.ReadOnly = true;
             // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Location = new System.Drawing.Point(613, 33);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(75, 23);
+            this.btnPesquisar.TabIndex = 20;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
+            // txtNome
+            // 
+            this.txtNome.Location = new System.Drawing.Point(215, 34);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(375, 20);
+            this.txtNome.TabIndex = 19;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(141, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 13);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Nome: ";
+            // 
+            // btnSair
+            // 
+            this.btnSair.BackColor = System.Drawing.SystemColors.Info;
+            this.btnSair.ForeColor = System.Drawing.Color.Red;
+            this.btnSair.Location = new System.Drawing.Point(365, 400);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(75, 23);
+            this.btnSair.TabIndex = 21;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
             // frmPesquisaClienteFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,7 +255,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_usuarioDataGridView);
             this.Name = "frmPesquisaClienteFornecedor";
-            this.Text = "frmPesquisaClienteFornecedor";
+            this.Text = "Pesquisar usuario";
             this.Load += new System.EventHandler(this.frmPesquisaClienteFornecedor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.contasDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_usuarioBindingSource)).EndInit();

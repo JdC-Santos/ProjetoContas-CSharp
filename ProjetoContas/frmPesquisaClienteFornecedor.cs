@@ -47,7 +47,7 @@ namespace ProjetoContas
             else
             {
                 string nome = "%" + txtNome.Text + "%";
-                tb_usuarioTableAdapter.FillByNome(contasDataSet.tb_usuario, nome,tipo);
+                tb_usuarioTableAdapter.FillByNome(contasDataSet.tb_usuario, nome, "%"+tipo+"%");
             }
         }
     }
