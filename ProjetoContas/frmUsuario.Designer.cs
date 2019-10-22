@@ -34,6 +34,7 @@
             System.Windows.Forms.Label sg_nivelLabel;
             System.Windows.Forms.Label nm_loginLabel;
             System.Windows.Forms.Label cd_senhaLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsuario));
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
@@ -45,14 +46,16 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.cd_administradorTextBox = new System.Windows.Forms.TextBox();
+            this.tb_administradorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.contasDataSet = new ProjetoContas.contasDataSet();
             this.nm_administradorTextBox = new System.Windows.Forms.TextBox();
             this.sg_nivelTextBox = new System.Windows.Forms.TextBox();
             this.nm_loginTextBox = new System.Windows.Forms.TextBox();
             this.cd_senhaTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tb_administradorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.contasDataSet = new ProjetoContas.contasDataSet();
             this.tb_administradorTableAdapter = new ProjetoContas.contasDataSetTableAdapters.tb_administradorTableAdapter();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             cd_administradorLabel = new System.Windows.Forms.Label();
             nm_administradorLabel = new System.Windows.Forms.Label();
             sg_nivelLabel = new System.Windows.Forms.Label();
@@ -177,6 +180,7 @@
             this.btnImprimir.TabIndex = 16;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // btnPesquisar
             // 
@@ -215,6 +219,16 @@
             this.cd_administradorTextBox.Name = "cd_administradorTextBox";
             this.cd_administradorTextBox.Size = new System.Drawing.Size(375, 20);
             this.cd_administradorTextBox.TabIndex = 21;
+            // 
+            // tb_administradorBindingSource
+            // 
+            this.tb_administradorBindingSource.DataMember = "tb_administrador";
+            this.tb_administradorBindingSource.DataSource = this.contasDataSet;
+            // 
+            // contasDataSet
+            // 
+            this.contasDataSet.DataSetName = "contasDataSet";
+            this.contasDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // nm_administradorTextBox
             // 
@@ -270,19 +284,24 @@
             this.label1.UseCompatibleTextRendering = true;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // tb_administradorBindingSource
-            // 
-            this.tb_administradorBindingSource.DataMember = "tb_administrador";
-            this.tb_administradorBindingSource.DataSource = this.contasDataSet;
-            // 
-            // contasDataSet
-            // 
-            this.contasDataSet.DataSetName = "contasDataSet";
-            this.contasDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // tb_administradorTableAdapter
             // 
             this.tb_administradorTableAdapter.ClearBeforeFill = true;
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Document = this.printDocument1;
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
             // frmUsuario
             // 
@@ -341,5 +360,7 @@
         private System.Windows.Forms.TextBox nm_loginTextBox;
         private System.Windows.Forms.TextBox cd_senhaTextBox;
         private System.Windows.Forms.Label label1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }

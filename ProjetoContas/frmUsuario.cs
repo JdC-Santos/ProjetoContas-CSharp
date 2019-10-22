@@ -160,5 +160,25 @@ namespace ProjetoContas
             frmPesquisaUsuario fpu = new frmPesquisaUsuario();
             fpu.Show();
         }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            printPreviewDialog1.ShowDialog();
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            string str = "";
+            Graphics objImpressao = e.Graphics;
+
+            str += "FICHA DE ADMINISTRADOR\n\n";
+            str += "Código: "+ cd_administradorTextBox.Text+"\n";
+            str += "Nome: "+ nm_administradorTextBox.Text +"\n";
+            str += "Nível: " + sg_nivelTextBox.Text + "\n";
+            str += "Login: "+ nm_loginTextBox.Text+"\n";
+
+            Font fonte = new System.Drawing.Font("Arial", 12, FontStyle.Bold);
+            objImpressao.DrawString(str, fonte, Brushes.Black, 50, 50);
+        }
     }
 }

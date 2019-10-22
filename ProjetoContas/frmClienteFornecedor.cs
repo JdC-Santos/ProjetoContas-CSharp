@@ -199,12 +199,31 @@ namespace ProjetoContas
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            string str = "";
+            string str = "", ds_usu;
             Graphics objImpressao = e.Graphics;
+
+            if (ds_usuarioTextBox.Text == "f")
+            {
+                ds_usu = "Fisico";
+            } else {
+                ds_usu = "Juridico";
+            }
 
             str += "FICHA DE USUÁRIO\n\n";
             str += "Código: " + cd_usuarioTextBox.Text + "\n";
-            //...
+            str += "Nome: " + nm_usuarioTextBox.Text + "\n";
+            str += "Tipo: "+ ds_usu +"\n";
+            str += "Endereço: "+ ds_enderecoTextBox.Text +"\n";
+            str += "Bairro: " + nm_bairroTextBox.Text + "\n";
+            str += "Cidade: " + nm_cidadeTextBox.Text +"\n";
+            str += "Estado: "+ sg_estadoTextBox.Text +"\n";
+            str += "CEP: " + cd_cepTextBox.Text + "\n";
+            str += "Telefone: " + ds_telefoneTextBox.Text + "\n";
+            str += "E-mail: "+ ds_emailTextBox.Text + "\n";
+            str += "CPF: " + cd_cpfTextBox.Text + "\n";
+            str += "CNPJ: " + cd_cnpjTextBox.Text + "\n";
+            str += "RG: "+ cd_rgTextBox.Text +"\n";
+            str += "IE: " + cd_ieTextBox.Text + "\n";
 
             Font fonte = new System.Drawing.Font("Arial", 12, FontStyle.Bold);
             objImpressao.DrawString(str, fonte , Brushes.Black,50,50);
