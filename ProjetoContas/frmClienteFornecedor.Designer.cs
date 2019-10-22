@@ -44,6 +44,7 @@
             System.Windows.Forms.Label cd_rgLabel;
             System.Windows.Forms.Label cd_ieLabel;
             System.Windows.Forms.Label nm_usuarioLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClienteFornecedor));
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
@@ -69,11 +70,13 @@
             this.cd_cnpjTextBox = new System.Windows.Forms.TextBox();
             this.cd_rgTextBox = new System.Windows.Forms.TextBox();
             this.cd_ieTextBox = new System.Windows.Forms.TextBox();
+            this.nm_usuarioTextBox = new System.Windows.Forms.TextBox();
             this.tb_usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contasDataSet = new ProjetoContas.contasDataSet();
             this.tb_usuarioTableAdapter = new ProjetoContas.contasDataSetTableAdapters.tb_usuarioTableAdapter();
             this.tableAdapterManager = new ProjetoContas.contasDataSetTableAdapters.TableAdapterManager();
-            this.nm_usuarioTextBox = new System.Windows.Forms.TextBox();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             cd_usuarioLabel = new System.Windows.Forms.Label();
             ds_usuarioLabel = new System.Windows.Forms.Label();
             ds_enderecoLabel = new System.Windows.Forms.Label();
@@ -257,6 +260,7 @@
             this.btnImprimir.TabIndex = 35;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // btnSair
             // 
@@ -460,6 +464,23 @@
             this.cd_ieTextBox.Size = new System.Drawing.Size(375, 20);
             this.cd_ieTextBox.TabIndex = 67;
             // 
+            // nm_usuarioLabel
+            // 
+            nm_usuarioLabel.AutoSize = true;
+            nm_usuarioLabel.Location = new System.Drawing.Point(74, 118);
+            nm_usuarioLabel.Name = "nm_usuarioLabel";
+            nm_usuarioLabel.Size = new System.Drawing.Size(33, 13);
+            nm_usuarioLabel.TabIndex = 67;
+            nm_usuarioLabel.Text = "nome";
+            // 
+            // nm_usuarioTextBox
+            // 
+            this.nm_usuarioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_usuarioBindingSource, "nm_usuario", true));
+            this.nm_usuarioTextBox.Location = new System.Drawing.Point(111, 114);
+            this.nm_usuarioTextBox.Name = "nm_usuarioTextBox";
+            this.nm_usuarioTextBox.Size = new System.Drawing.Size(375, 20);
+            this.nm_usuarioTextBox.TabIndex = 68;
+            // 
             // tb_usuarioBindingSource
             // 
             this.tb_usuarioBindingSource.DataMember = "tb_usuario";
@@ -482,22 +503,20 @@
             this.tableAdapterManager.tb_usuarioTableAdapter = this.tb_usuarioTableAdapter;
             this.tableAdapterManager.UpdateOrder = ProjetoContas.contasDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // nm_usuarioLabel
+            // printPreviewDialog1
             // 
-            nm_usuarioLabel.AutoSize = true;
-            nm_usuarioLabel.Location = new System.Drawing.Point(74, 118);
-            nm_usuarioLabel.Name = "nm_usuarioLabel";
-            nm_usuarioLabel.Size = new System.Drawing.Size(33, 13);
-            nm_usuarioLabel.TabIndex = 67;
-            nm_usuarioLabel.Text = "nome";
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Document = this.printDocument1;
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
-            // nm_usuarioTextBox
+            // printDocument1
             // 
-            this.nm_usuarioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_usuarioBindingSource, "nm_usuario", true));
-            this.nm_usuarioTextBox.Location = new System.Drawing.Point(111, 114);
-            this.nm_usuarioTextBox.Name = "nm_usuarioTextBox";
-            this.nm_usuarioTextBox.Size = new System.Drawing.Size(375, 20);
-            this.nm_usuarioTextBox.TabIndex = 68;
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
             // frmClienteFornecedor
             // 
@@ -587,5 +606,7 @@
         private System.Windows.Forms.TextBox cd_rgTextBox;
         private System.Windows.Forms.TextBox cd_ieTextBox;
         private System.Windows.Forms.TextBox nm_usuarioTextBox;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }

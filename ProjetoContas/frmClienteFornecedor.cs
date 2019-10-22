@@ -191,5 +191,23 @@ namespace ProjetoContas
             frmPesquisaClienteFornecedor fpcf = new frmPesquisaClienteFornecedor(this.tipo);
             fpcf.Show();
         }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            printPreviewDialog1.ShowDialog();
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            string str = "";
+            Graphics objImpressao = e.Graphics;
+
+            str += "FICHA DE USUÁRIO\n\n";
+            str += "Código: " + cd_usuarioTextBox.Text + "\n";
+            //...
+
+            Font fonte = new System.Drawing.Font("Arial", 12, FontStyle.Bold);
+            objImpressao.DrawString(str, fonte , Brushes.Black,50,50);
+        }
     }
 }
