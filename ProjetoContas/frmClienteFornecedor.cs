@@ -13,11 +13,128 @@ namespace ProjetoContas
     public partial class frmClienteFornecedor : Form
     {
         private string tipo;
-        public frmClienteFornecedor(string tipo)
+        public frmClienteFornecedor(string tp)
         {
-            this.tipo = tipo;
+            this.tipo = tp;
             InitializeComponent();
             Desabilita();
+        }
+
+        public bool ValidarForm()
+        {
+            bool validado = true;
+            string msg = "", tp = "cliente";
+
+            if (tipo == "f")
+            {
+                tp = "fornecedor";
+            }
+
+            if (nm_usuarioTextBox.TextLength == 0)
+            {
+                msg += "Digite o nome do " + tp + "\n";
+                validado = false;
+            }
+
+            if (ds_usuarioTextBox.TextLength == 0)
+            {
+                msg += "Digite o tipo do " + tp + "\n";
+                validado = false;
+            }
+
+            if (ds_enderecoTextBox.TextLength == 0)
+            {
+                msg += "Digite o endereço do " + tp + "\n";
+                validado = false;
+            }
+
+            if (nm_cidadeTextBox.TextLength == 0)
+            {
+                msg += "Digite a cidade do " + tp + "\n";
+                validado = false;
+            }
+
+            if (nm_bairroTextBox.TextLength == 0)
+            {
+                msg += "Digite o bairro do " + tp + "\n";
+                validado = false;
+            }
+
+            if (sg_estadoTextBox.TextLength == 0)
+            {
+                msg += "Digite o estado do " + tp + "\n";
+                validado = false;
+            }
+
+            if (cd_cepTextBox.TextLength == 0)
+            {
+                msg += "Digite o cep do " + tp + "\n";
+                validado = false;
+            }
+
+            if (ds_telefoneTextBox.TextLength == 0)
+            {
+                msg += "Digite o telefone do " + tp + "\n";
+                validado = false;
+            }
+
+            if (ds_emailTextBox.TextLength == 0)
+            {
+                msg += "Digite o email do " + tp + "\n";
+                validado = false;
+            }
+
+            if (cd_cpfTextBox.TextLength == 0 && cd_cnpjTextBox.TextLength == 0)
+            {
+                msg += "Digite o CPF ou CNPJ do " + tp + "\n";
+                validado = false;
+            }
+
+            if (cd_rgTextBox.TextLength == 0)
+            {
+                msg += "Digite o RG do " + tp + "\n";
+                validado = false;
+            }
+
+            if (ds_emailTextBox.TextLength == 0)
+            {
+                msg += "Digite a IE do " + tp +"\n";
+                validado = false;
+            }
+
+            if (!validado)
+            {
+                MessageBox.Show(msg);
+            }
+
+            return validado;
+        }
+
+        public bool TclPadrao(int c)
+        {
+            if (c == 32 || c == 8)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool TclLetra(int c)
+        {
+            if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool TclNumero(int c)
+        {
+            if ((c >= 48 && c <= 57))
+            {
+                return true;
+            }
+            return false;
         }
 
         public void Habilita()
@@ -37,6 +154,19 @@ namespace ProjetoContas
             cd_cnpjTextBox.Enabled = true;
             cd_rgTextBox.Enabled = true;
             cd_ieTextBox.Enabled = true;
+
+            btnAnterior.Enabled = false;
+            btnProximo.Enabled = false;
+            btnNovo.Enabled = false;
+            btnAlterar.Enabled = false;
+            btnExcluir.Enabled = false;
+
+            btnSalvar.Enabled = true;
+            btnCancelar.Enabled = true;
+
+            btnPesquisar.Enabled = false;
+            btnImprimir.Enabled = false;
+            btnSair.Enabled = false;
         }
 
         public void Desabilita()
@@ -56,6 +186,19 @@ namespace ProjetoContas
             cd_cnpjTextBox.Enabled = false;
             cd_rgTextBox.Enabled = false;
             cd_ieTextBox.Enabled = false;
+
+            btnAnterior.Enabled = true;
+            btnProximo.Enabled = true;
+            btnNovo.Enabled = true;
+            btnAlterar.Enabled = true;
+            btnExcluir.Enabled = true;
+
+            btnSalvar.Enabled = false;
+            btnCancelar.Enabled = false;
+
+            btnPesquisar.Enabled = true;
+            btnImprimir.Enabled = true;
+            btnSair.Enabled = true;
         }
 
         private void tb_usuarioBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -70,25 +213,22 @@ namespace ProjetoContas
         {
             // TODO: esta linha de código carrega dados na tabela 'contasDataSet.tb_usuario'. Você pode movê-la ou removê-la conforme necessário.
             this.tb_usuarioTableAdapter.Fill(this.contasDataSet.tb_usuario);
-            // TODO: esta linha de código carrega dados na tabela 'contasDataSet.tb_usuario'. Você pode movê-la ou removê-la conforme necessário.
-            this.tb_usuarioTableAdapter.Fill(this.contasDataSet.tb_usuario);
+            this.tb_usuarioBindingSource.Filter = "sg_tipo = '"+this.tipo+"'";
 
             if (this.tipo == "f")
             {
-                sg_tipoTextBox.Text = "Fornecedor";
                 this.Text = "Fornecedores";
             }
             else
             {
                 this.Text = "Clientes";
-                sg_tipoTextBox.Text = "Cliente";
                 labelTitle.Text = "Clientes";
             }
-
         }
 
         private void tb_usuarioBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
         {
+            sg_tipoTextBox.Text = tipo;
             this.Validate();
             this.tb_usuarioBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.contasDataSet);
@@ -112,22 +252,26 @@ namespace ProjetoContas
 
             if (this.tipo == "f")
             {
-                sg_tipoTextBox.Text = "Fornecedor";
+                sg_tipoTextBox.Text = "f";
             }
             else
             {
-                sg_tipoTextBox.Text = "Cliente";
+                sg_tipoTextBox.Text = "c";
             }
 
-            ds_usuarioTextBox.Focus();
+            nm_usuarioTextBox.Focus();
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            Validate();
-            tb_usuarioBindingSource.EndEdit();
-            tb_usuarioTableAdapter.Update(contasDataSet.tb_usuario);
-            Desabilita();
+            if (ValidarForm())
+            {
+                Validate();
+                tb_usuarioBindingSource.EndEdit();
+                tb_usuarioTableAdapter.Update(contasDataSet.tb_usuario);
+                Desabilita();
+            }
+            
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
@@ -171,7 +315,7 @@ namespace ProjetoContas
 
         private void validaFisicoJuridico(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar != 'f' && e.KeyChar != 'j')
+            if (!((e.KeyChar == 'f' || e.KeyChar == 'j') || TclPadrao(e.KeyChar) ))
             {
                 e.KeyChar = (char)0;
             }
@@ -179,8 +323,8 @@ namespace ProjetoContas
 
         private void validaEndereco(object sender, KeyPressEventArgs e)
         {
-            if (!(e.KeyChar >= '0' && e.KeyChar <= '9') && !(e.KeyChar >= 'a' && e.KeyChar <= 'z') && 
-                e.KeyChar != (char)8 && e.KeyChar != (char)44 && e.KeyChar != (char)32)
+            if (!( TclLetra(e.KeyChar) || TclPadrao(e.KeyChar) || 
+                TclNumero(e.KeyChar) || e.KeyChar == ',' ))
             {
                 e.KeyChar = (char)0;
             }
@@ -236,6 +380,39 @@ namespace ProjetoContas
 
             Font fonte = new System.Drawing.Font("Arial", 12, FontStyle.Bold);
             objImpressao.DrawString(str, fonte , Brushes.Black,50,50);
+        }
+
+        private void validaNome(object sender, KeyPressEventArgs e)
+        {
+            if (!(TclPadrao(e.KeyChar) || TclLetra(e.KeyChar) ))
+            {
+                e.KeyChar = (char)0;
+            }
+        }
+
+        private void validaCidade(object sender, KeyPressEventArgs e)
+        {
+            if (!(TclPadrao(e.KeyChar) || TclLetra(e.KeyChar)))
+            {
+                e.KeyChar = (char)0;
+            }
+        }
+
+        private void ApenasNumeros(object sender, KeyPressEventArgs e)
+        {
+            if (!(TclPadrao(e.KeyChar) || TclNumero(e.KeyChar)))
+            {
+                e.KeyChar = (char)0;
+            }
+        }
+
+        private void validaEmail(object sender, KeyPressEventArgs e)
+        {
+            if (!(TclPadrao(e.KeyChar) || TclLetra(e.KeyChar) || TclNumero(e.KeyChar) || 
+                e.KeyChar == 64 || e.KeyChar == 95 || e.KeyChar == 46) )
+            {
+                e.KeyChar = (char)0;
+            }
         }
     }
 }

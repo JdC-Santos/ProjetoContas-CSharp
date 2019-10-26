@@ -49,6 +49,8 @@
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.cd_contaTextBox = new System.Windows.Forms.TextBox();
+            this.tb_contaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.contasDataSet = new ProjetoContas.contasDataSet();
             this.dt_emissaoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.dt_vencimentoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.vl_compraTextBox = new System.Windows.Forms.TextBox();
@@ -59,8 +61,6 @@
             this.id_usuarioTextBox = new System.Windows.Forms.TextBox();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.tb_contaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.contasDataSet = new ProjetoContas.contasDataSet();
             this.tb_contaTableAdapter = new ProjetoContas.contasDataSetTableAdapters.tb_contaTableAdapter();
             this.tableAdapterManager = new ProjetoContas.contasDataSetTableAdapters.TableAdapterManager();
             cd_contaLabel = new System.Windows.Forms.Label();
@@ -257,6 +257,16 @@
             this.cd_contaTextBox.Size = new System.Drawing.Size(377, 20);
             this.cd_contaTextBox.TabIndex = 31;
             // 
+            // tb_contaBindingSource
+            // 
+            this.tb_contaBindingSource.DataMember = "tb_conta";
+            this.tb_contaBindingSource.DataSource = this.contasDataSet;
+            // 
+            // contasDataSet
+            // 
+            this.contasDataSet.DataSetName = "contasDataSet";
+            this.contasDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // dt_emissaoDateTimePicker
             // 
             this.dt_emissaoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.tb_contaBindingSource, "dt_emissao", true));
@@ -283,6 +293,7 @@
             this.vl_compraTextBox.Name = "vl_compraTextBox";
             this.vl_compraTextBox.Size = new System.Drawing.Size(377, 20);
             this.vl_compraTextBox.TabIndex = 37;
+            this.vl_compraTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidaValor);
             // 
             // dt_pagamentoDateTimePicker
             // 
@@ -301,6 +312,7 @@
             this.vl_pagoTextBox.Name = "vl_pagoTextBox";
             this.vl_pagoTextBox.Size = new System.Drawing.Size(377, 20);
             this.vl_pagoTextBox.TabIndex = 41;
+            this.vl_pagoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidaValor);
             // 
             // ds_obsTextBox
             // 
@@ -314,7 +326,7 @@
             // ds_tipoTextBox
             // 
             this.ds_tipoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_contaBindingSource, "ds_tipo", true));
-            this.ds_tipoTextBox.Location = new System.Drawing.Point(117, 293);
+            this.ds_tipoTextBox.Location = new System.Drawing.Point(117, 300);
             this.ds_tipoTextBox.Name = "ds_tipoTextBox";
             this.ds_tipoTextBox.Size = new System.Drawing.Size(377, 20);
             this.ds_tipoTextBox.TabIndex = 45;
@@ -342,16 +354,6 @@
             // printDocument1
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
-            // 
-            // tb_contaBindingSource
-            // 
-            this.tb_contaBindingSource.DataMember = "tb_conta";
-            this.tb_contaBindingSource.DataSource = this.contasDataSet;
-            // 
-            // contasDataSet
-            // 
-            this.contasDataSet.DataSetName = "contasDataSet";
-            this.contasDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tb_contaTableAdapter
             // 

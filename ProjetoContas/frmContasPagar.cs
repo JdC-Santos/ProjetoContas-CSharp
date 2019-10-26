@@ -13,6 +13,15 @@ namespace ProjetoContas
     public partial class frmContasPagar : Form
     {
         static public string tipoConta = "";
+
+        public bool validarDinheiro(int c)
+        {
+            if ((c >= 48 && c <= 57) || c == 44)
+            {
+                return true;
+            }
+            return false;
+        }
         public void Habilita()
         {
             cd_contaTextBox.Enabled = false;
@@ -26,6 +35,18 @@ namespace ProjetoContas
             ds_tipoTextBox.Text = tipoConta;
             ds_tipoTextBox.Visible = false;
 
+            btnAnterior.Enabled = false;
+            btnProximo.Enabled = false;
+            btnNovo.Enabled = false;
+            btnAlterar.Enabled = false;
+            btnExcluir.Enabled = false;
+
+            btnSalvar.Enabled = true;
+            btnCancelar.Enabled = true;
+
+            btnPesquisar.Enabled = false;
+            btnImprimir.Enabled = false;
+            btnSair.Enabled = false;
 
         }
 
@@ -42,6 +63,19 @@ namespace ProjetoContas
 
             ds_tipoTextBox.Text = tipoConta;
             ds_tipoTextBox.Visible = false;
+
+            btnAnterior.Enabled = true;
+            btnProximo.Enabled = true;
+            btnNovo.Enabled = true;
+            btnAlterar.Enabled = true;
+            btnExcluir.Enabled = true;
+
+            btnSalvar.Enabled = false;
+            btnCancelar.Enabled = false;
+
+            btnPesquisar.Enabled = true;
+            btnImprimir.Enabled = true;
+            btnSair.Enabled = true;
         }
 
         public bool validaCampos()
@@ -67,7 +101,7 @@ namespace ProjetoContas
                 msg += "Digite o valor da conta!\n";
             }
 
-            if (vl_pagoTextBox.Text.Count() == 0)
+            if (vl_pagoTextBox.TextLength == 0)
             {
                 camposValidados = false;
                 msg += "Digite o valor pago\n";
@@ -101,6 +135,7 @@ namespace ProjetoContas
         {
             InitializeComponent();
             tipoConta = tipo;
+            Desabilita();
 
             if (tipo  == "pagar")
             {
@@ -124,10 +159,8 @@ namespace ProjetoContas
         {
             // TODO: esta linha de código carrega dados na tabela 'contasDataSet.tb_conta'. Você pode movê-la ou removê-la conforme necessário.
             this.tb_contaTableAdapter.Fill(this.contasDataSet.tb_conta);
-            // TODO: esta linha de código carrega dados na tabela 'contasDataSet.tb_conta'. Você pode movê-la ou removê-la conforme necessário.
-            this.tb_contaTableAdapter.Fill(this.contasDataSet.tb_conta);
-            Desabilita();
-           
+            //this.tb_contaBindingSource.Filter = "ds_tipo = '"+ tipoConta + "'";
+
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -243,6 +276,14 @@ namespace ProjetoContas
         {
             frmPesquisaConta fpc = new frmPesquisaConta(tipoConta);
             fpc.Show();
+        }
+
+        private void ValidaValor(object sender, KeyPressEventArgs e)
+        {
+            if (!(validarDinheiro(e.KeyChar)))
+            {
+                e.KeyChar = (char)0;
+            }
         }
     }
 }

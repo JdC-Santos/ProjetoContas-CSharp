@@ -238,6 +238,7 @@
             this.nm_administradorTextBox.Name = "nm_administradorTextBox";
             this.nm_administradorTextBox.Size = new System.Drawing.Size(375, 20);
             this.nm_administradorTextBox.TabIndex = 23;
+            this.nm_administradorTextBox.TextChanged += new System.EventHandler(this.Nm_administradorTextBox_TextChanged);
             this.nm_administradorTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarNome);
             // 
             // sg_nivelTextBox
