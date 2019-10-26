@@ -16,15 +16,43 @@ namespace ProjetoContas
         {
             InitializeComponent();
         }
+        
+        public bool validaCampos()
+        {
+            bool camposValidados = true;
+
+            string msg = "";
+            if (txtLogin.Text.Count() == 0)
+            {
+                msg += "Digite o LOGIN\n";
+                camposValidados = false;
+            }
+
+            if (txtPw.Text.Count() == 0)
+            {
+                msg += "Digite a SENHA";
+                camposValidados = false;
+            }
+
+            if (!camposValidados)
+            {
+                MessageBox.Show(msg);
+            }
+
+            return camposValidados;
+        }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtLogin.Text == "adm" && txtPw.Text == "123")
+            if (validaCampos())
             {
-                frmPrincipal fp = new frmPrincipal();
-                fp.Show();
-                Hide();
-            }
+                if (txtLogin.Text == "adm" && txtPw.Text == "123")
+                {
+                    frmPrincipal fp = new frmPrincipal();
+                    fp.Show();
+                    Hide();
+                }
+            }   
         }
 
         private void btnSair_Click(object sender, EventArgs e)

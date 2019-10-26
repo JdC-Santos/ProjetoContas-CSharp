@@ -36,20 +36,20 @@
             // 
             // btnSair
             // 
-            this.btnSair.Location = new System.Drawing.Point(50, 124);
+            this.btnSair.Location = new System.Drawing.Point(50, 163);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(93, 23);
-            this.btnSair.TabIndex = 0;
+            this.btnSair.Size = new System.Drawing.Size(256, 23);
+            this.btnSair.TabIndex = 1;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(213, 124);
+            this.btnLogin.Location = new System.Drawing.Point(50, 123);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(93, 23);
-            this.btnLogin.TabIndex = 1;
+            this.btnLogin.Size = new System.Drawing.Size(256, 23);
+            this.btnLogin.TabIndex = 0;
             this.btnLogin.Text = "Entrar";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -64,6 +64,7 @@
             // txtPw
             // 
             this.txtPw.Location = new System.Drawing.Point(50, 65);
+            this.txtPw.MaxLength = 20;
             this.txtPw.Name = "txtPw";
             this.txtPw.Size = new System.Drawing.Size(256, 20);
             this.txtPw.TabIndex = 3;
@@ -73,7 +74,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(356, 177);
+            this.ClientSize = new System.Drawing.Size(356, 208);
             this.ControlBox = false;
             this.Controls.Add(this.txtPw);
             this.Controls.Add(this.txtLogin);

@@ -44,6 +44,59 @@ namespace ProjetoContas
             ds_tipoTextBox.Visible = false;
         }
 
+        public bool validaCampos()
+        {
+            bool camposValidados = true;
+            string msg = "";
+
+            if (dt_emissaoDateTimePicker.Text.Count() == 0)
+            {
+                camposValidados = false;
+                msg += "Digite a data de emissão da conta!\n";
+            }
+
+            if (dt_vencimentoDateTimePicker.Text.Count() == 0)
+            {
+                camposValidados = false;
+                msg += "Digite a data de vencimento da conta!\n";
+            }
+
+            if (vl_compraTextBox.Text.Count() == 0)
+            {
+                camposValidados = false;
+                msg += "Digite o valor da conta!\n";
+            }
+
+            if (vl_pagoTextBox.Text.Count() == 0)
+            {
+                camposValidados = false;
+                msg += "Digite o valor pago\n";
+            }
+
+            if (id_usuarioTextBox.Text.Count() == 0)
+            {
+                string tipoUsu;
+                if (tipoConta == "receber")
+                {
+                    tipoUsu = "cliente";
+                }
+                else
+                {
+                    tipoUsu = "fornecedor";
+                }
+
+                camposValidados = false;
+                msg += "Digite o código do "+ tipoUsu +"\n";
+            }
+
+            if (!camposValidados)
+            {
+                MessageBox.Show(msg);
+            }
+
+            return camposValidados;
+        }
+
         public frmContasPagar(string tipo)
         {
             InitializeComponent();
@@ -135,10 +188,13 @@ namespace ProjetoContas
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.tb_contaBindingSource.EndEdit();
-            this.tb_contaTableAdapter.Update(this.contasDataSet.tb_conta);
-            Desabilita();
+            if (validaCampos())
+            {
+                this.Validate();
+                this.tb_contaBindingSource.EndEdit();
+                this.tb_contaTableAdapter.Update(this.contasDataSet.tb_conta);
+                Desabilita();
+            }
         }
 
         private void tb_contaBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)

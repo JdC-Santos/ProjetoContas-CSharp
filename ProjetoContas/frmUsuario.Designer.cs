@@ -238,6 +238,7 @@
             this.nm_administradorTextBox.Name = "nm_administradorTextBox";
             this.nm_administradorTextBox.Size = new System.Drawing.Size(375, 20);
             this.nm_administradorTextBox.TabIndex = 23;
+            this.nm_administradorTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarNome);
             // 
             // sg_nivelTextBox
             // 
@@ -247,6 +248,7 @@
             this.sg_nivelTextBox.Name = "sg_nivelTextBox";
             this.sg_nivelTextBox.Size = new System.Drawing.Size(375, 20);
             this.sg_nivelTextBox.TabIndex = 25;
+            this.sg_nivelTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validaNivel);
             // 
             // nm_loginTextBox
             // 
@@ -265,6 +267,7 @@
             this.cd_senhaTextBox.Name = "cd_senhaTextBox";
             this.cd_senhaTextBox.Size = new System.Drawing.Size(375, 20);
             this.cd_senhaTextBox.TabIndex = 29;
+            this.cd_senhaTextBox.UseSystemPasswordChar = true;
             // 
             // label1
             // 

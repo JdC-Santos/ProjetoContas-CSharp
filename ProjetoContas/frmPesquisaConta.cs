@@ -44,7 +44,6 @@ namespace ProjetoContas
             else
             {
                 string dt = dtEmissao.Text.ToString();
-                MessageBox.Show(dt);
                 tb_contaTableAdapter.FillByDtEmissao(contasDataSet.tb_conta, dt, "%" + tipo + "%");
             }
         }

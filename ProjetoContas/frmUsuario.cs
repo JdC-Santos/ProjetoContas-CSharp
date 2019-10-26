@@ -60,6 +60,44 @@ namespace ProjetoContas
 
         }
 
+        public bool valdarCampos()
+        {
+            bool formValidado = true;
+
+            string mensagem= "";
+
+            if (nm_administradorTextBox.Text.Count() == 0 )
+            {
+                formValidado = false;
+                mensagem += "Preencha o nome do admin\n";
+            }
+
+            if (sg_nivelTextBox.Text.Count() == 0)
+            {
+                formValidado = false;
+                mensagem += "Preencha o nivel do admin\n";
+            }
+
+            if (nm_loginTextBox.Text.Count() == 0)
+            {
+                formValidado = false;
+                mensagem += "Preencha o login do admin\n";
+            }
+
+            if (cd_senhaTextBox.Text.Count() <= 5)
+            {
+                formValidado = false;
+                mensagem += "A Senha deve conter ao menos 6 caracteres";
+            }
+
+            if (!formValidado)
+            {
+                MessageBox.Show(mensagem);
+            }
+
+            return formValidado;
+        }
+
         public frmUsuario()
         {
             InitializeComponent();
@@ -93,10 +131,13 @@ namespace ProjetoContas
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            Validate();
-            tb_administradorBindingSource.EndEdit();
-            tb_administradorTableAdapter.Update(contasDataSet.tb_administrador);
-            Desabilita();
+            if (valdarCampos())
+            {
+                Validate();
+                tb_administradorBindingSource.EndEdit();
+                tb_administradorTableAdapter.Update(contasDataSet.tb_administrador);
+                Desabilita();
+            }
         }
 
         private void btnAnterior_Click(object sender, EventArgs e)
@@ -179,6 +220,22 @@ namespace ProjetoContas
 
             Font fonte = new System.Drawing.Font("Arial", 12, FontStyle.Bold);
             objImpressao.DrawString(str, fonte, Brushes.Black, 50, 50);
+        }
+
+        private void validarNome(object sender, KeyPressEventArgs e)
+        {
+            if(!( (e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar >= 97 && e.KeyChar <= 122)))
+            {
+                e.KeyChar = (char)0;
+            }
+        }
+
+        private void validaNivel(object sender, KeyPressEventArgs e)
+        {
+            if (!(e.KeyChar >= 48 && e.KeyChar <= 57))
+            {
+                e.KeyChar = (char)0;
+            }
         }
     }
 }
