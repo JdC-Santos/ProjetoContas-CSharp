@@ -148,5 +148,45 @@ namespace ProjetoContas
             this.tableAdapterManager.UpdateAll(this.contasDataSet);
 
         }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            string str,ds_conta;
+
+            Graphics objImpressao = e.Graphics;
+
+            if (ds_tipoTextBox.Text == "pagar")
+            {
+                ds_conta = "PAGAR";
+            }
+            else
+            {
+                ds_conta = "RECEBER";
+            }
+
+            str = "FICHA DE CONTA A "+ds_conta+"\n\n";
+
+            str += "CÓDIGO DA CONTA: " + cd_contaTextBox.Text + "\n";
+            str += "DATA DE EMISSÃO: " + dt_emissaoDateTimePicker.Text + "\n";
+            str += "DATA DE VENCIMENTO: " + dt_vencimentoDateTimePicker.Text + "\n";
+            str += "VALOR DA COMPRA: " + vl_compraTextBox.Text + "\n";
+            str += "VALOR PAGO: " + vl_pagoTextBox.Text + "\n";
+            str += "OBS.: " + ds_obsTextBox.Text + "\n";
+            str += "USUÁRIO: " + id_usuarioTextBox.Text + "\n";
+
+            Font fonte = new System.Drawing.Font("Arial", 12, FontStyle.Bold);
+            objImpressao.DrawString(str, fonte, Brushes.Black, 50, 50);
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            printPreviewDialog1.ShowDialog();
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            frmPesquisaConta fpc = new frmPesquisaConta(tipoConta);
+            fpc.Show();
+        }
     }
 }

@@ -56,5 +56,10 @@ namespace ProjetoContas
             cp.Show();
             Hide();
         }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

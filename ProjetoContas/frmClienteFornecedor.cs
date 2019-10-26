@@ -199,7 +199,7 @@ namespace ProjetoContas
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            string str = "", ds_usu;
+            string str = "", ds_usu,tipoU;
             Graphics objImpressao = e.Graphics;
 
             if (ds_usuarioTextBox.Text == "f")
@@ -209,7 +209,16 @@ namespace ProjetoContas
                 ds_usu = "Juridico";
             }
 
-            str += "FICHA DE USUÁRIO\n\n";
+            if (this.tipo == "c")
+            {
+                tipoU = "CLIENTE";
+            }
+            else
+            {
+                tipoU = "FORNECEDOR";
+            }
+
+            str += "FICHA DE "+tipoU+"\n\n";
             str += "Código: " + cd_usuarioTextBox.Text + "\n";
             str += "Nome: " + nm_usuarioTextBox.Text + "\n";
             str += "Tipo: "+ ds_usu +"\n";

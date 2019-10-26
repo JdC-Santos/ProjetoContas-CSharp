@@ -37,6 +37,7 @@
             System.Windows.Forms.Label vl_pagoLabel;
             System.Windows.Forms.Label ds_obsLabel;
             System.Windows.Forms.Label id_usuarioLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmContasPagar));
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
@@ -48,8 +49,6 @@
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.cd_contaTextBox = new System.Windows.Forms.TextBox();
-            this.tb_contaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.contasDataSet = new ProjetoContas.contasDataSet();
             this.dt_emissaoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.dt_vencimentoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.vl_compraTextBox = new System.Windows.Forms.TextBox();
@@ -58,6 +57,10 @@
             this.ds_obsTextBox = new System.Windows.Forms.TextBox();
             this.ds_tipoTextBox = new System.Windows.Forms.TextBox();
             this.id_usuarioTextBox = new System.Windows.Forms.TextBox();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.tb_contaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.contasDataSet = new ProjetoContas.contasDataSet();
             this.tb_contaTableAdapter = new ProjetoContas.contasDataSetTableAdapters.tb_contaTableAdapter();
             this.tableAdapterManager = new ProjetoContas.contasDataSetTableAdapters.TableAdapterManager();
             cd_contaLabel = new System.Windows.Forms.Label();
@@ -172,6 +175,7 @@
             this.btnPesquisar.TabIndex = 27;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // btnImprimir
             // 
@@ -181,6 +185,7 @@
             this.btnImprimir.TabIndex = 26;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // btnSair
             // 
@@ -252,19 +257,10 @@
             this.cd_contaTextBox.Size = new System.Drawing.Size(377, 20);
             this.cd_contaTextBox.TabIndex = 31;
             // 
-            // tb_contaBindingSource
-            // 
-            this.tb_contaBindingSource.DataMember = "tb_conta";
-            this.tb_contaBindingSource.DataSource = this.contasDataSet;
-            // 
-            // contasDataSet
-            // 
-            this.contasDataSet.DataSetName = "contasDataSet";
-            this.contasDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // dt_emissaoDateTimePicker
             // 
             this.dt_emissaoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.tb_contaBindingSource, "dt_emissao", true));
+            this.dt_emissaoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dt_emissaoDateTimePicker.Location = new System.Drawing.Point(117, 107);
             this.dt_emissaoDateTimePicker.Name = "dt_emissaoDateTimePicker";
             this.dt_emissaoDateTimePicker.Size = new System.Drawing.Size(377, 20);
@@ -273,6 +269,7 @@
             // dt_vencimentoDateTimePicker
             // 
             this.dt_vencimentoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.tb_contaBindingSource, "dt_vencimento", true));
+            this.dt_vencimentoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dt_vencimentoDateTimePicker.Location = new System.Drawing.Point(117, 133);
             this.dt_vencimentoDateTimePicker.Name = "dt_vencimentoDateTimePicker";
             this.dt_vencimentoDateTimePicker.Size = new System.Drawing.Size(377, 20);
@@ -290,6 +287,7 @@
             // dt_pagamentoDateTimePicker
             // 
             this.dt_pagamentoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.tb_contaBindingSource, "dt_pagamento", true));
+            this.dt_pagamentoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dt_pagamentoDateTimePicker.Location = new System.Drawing.Point(117, 185);
             this.dt_pagamentoDateTimePicker.Name = "dt_pagamentoDateTimePicker";
             this.dt_pagamentoDateTimePicker.Size = new System.Drawing.Size(377, 20);
@@ -329,6 +327,31 @@
             this.id_usuarioTextBox.Name = "id_usuarioTextBox";
             this.id_usuarioTextBox.Size = new System.Drawing.Size(377, 20);
             this.id_usuarioTextBox.TabIndex = 47;
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Document = this.printDocument1;
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // tb_contaBindingSource
+            // 
+            this.tb_contaBindingSource.DataMember = "tb_conta";
+            this.tb_contaBindingSource.DataSource = this.contasDataSet;
+            // 
+            // contasDataSet
+            // 
+            this.contasDataSet.DataSetName = "contasDataSet";
+            this.contasDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tb_contaTableAdapter
             // 
@@ -409,5 +432,7 @@
         private System.Windows.Forms.TextBox ds_obsTextBox;
         private System.Windows.Forms.TextBox ds_tipoTextBox;
         private System.Windows.Forms.TextBox id_usuarioTextBox;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }

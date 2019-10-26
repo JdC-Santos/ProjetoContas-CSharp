@@ -87,6 +87,12 @@
     <Compile Include="frmPesquisaClienteFornecedor.Designer.cs">
       <DependentUpon>frmPesquisaClienteFornecedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPesquisaConta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPesquisaConta.Designer.cs">
+      <DependentUpon>frmPesquisaConta.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPesquisaUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPesquisaClienteFornecedor.resx">
       <DependentUpon>frmPesquisaClienteFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPesquisaConta.resx">
+      <DependentUpon>frmPesquisaConta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPesquisaUsuario.resx">
       <DependentUpon>frmPesquisaUsuario.cs</DependentUpon>
