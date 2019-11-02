@@ -62,7 +62,6 @@ namespace ProjetoContas
             ds_obsTextBox.Enabled = false;
 
             ds_tipoTextBox.Text = tipoConta;
-            ds_tipoTextBox.Visible = false;
 
             btnAnterior.Enabled = true;
             btnProximo.Enabled = true;
@@ -159,7 +158,7 @@ namespace ProjetoContas
         {
             // TODO: esta linha de código carrega dados na tabela 'contasDataSet.tb_conta'. Você pode movê-la ou removê-la conforme necessário.
             this.tb_contaTableAdapter.Fill(this.contasDataSet.tb_conta);
-            //this.tb_contaBindingSource.Filter = "ds_tipo = '"+ tipoConta + "'";
+            this.tb_contaBindingSource.Filter = "ds_tipo = '"+ tipoConta + "'";
 
         }
 
@@ -190,6 +189,12 @@ namespace ProjetoContas
         private void btnNovo_Click(object sender, EventArgs e)
         {
             tb_contaBindingSource.AddNew();
+
+            
+
+            dt_emissaoDateTimePicker.Text = DateTime.Now.ToString();
+            dt_pagamentoDateTimePicker.Text = DateTime.Now.ToString();
+            dt_vencimentoDateTimePicker.Text = DateTime.Now.ToString();
             Habilita();
         }
 
@@ -221,6 +226,8 @@ namespace ProjetoContas
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            ds_tipoTextBox.Text = tipoConta;
+
             if (validaCampos())
             {
                 this.Validate();

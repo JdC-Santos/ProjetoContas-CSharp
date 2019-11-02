@@ -32,7 +32,16 @@ namespace ProjetoContas
         {
             // TODO: esta linha de código carrega dados na tabela 'contasDataSet.tb_conta'. Você pode movê-la ou removê-la conforme necessário.
             this.tb_contaTableAdapter.Fill(this.contasDataSet.tb_conta);
+            this.tb_contaBindingSource.Filter = "ds_tipo = '" + tipo + "'";
 
+            if (tipo == "receber")
+            {
+                this.Text = "Lista de contas a receber";
+            }
+            else
+            {
+                this.Text = "Lista de contas a pagar";
+            }
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
@@ -43,8 +52,8 @@ namespace ProjetoContas
             }
             else
             {
-                string dt = dtEmissao.Text.ToString();
-                tb_contaTableAdapter.FillByDtEmissao(contasDataSet.tb_conta, dt, "%" + tipo + "%");
+                string dt = dtEmissao.Text;
+                tb_contaTableAdapter.FillByDtEmissao(contasDataSet.tb_conta, dt, tipo);
             }
         }
 

@@ -31,6 +31,7 @@ namespace ProjetoContas
         {
             // TODO: esta linha de código carrega dados na tabela 'contasDataSet.tb_usuario'. Você pode movê-la ou removê-la conforme necessário.
             this.tb_usuarioTableAdapter.Fill(this.contasDataSet.tb_usuario);
+            this.tb_usuarioBindingSource.Filter = "sg_tipo = '" + tipo + "'";
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -42,12 +43,13 @@ namespace ProjetoContas
         {
             if (txtNome.Text == "")
             {
-                tb_usuarioTableAdapter.Fill(contasDataSet.tb_usuario);
+                string nome = "%%";
+                tb_usuarioTableAdapter.FillByNome(contasDataSet.tb_usuario, nome, tipo);
             }
             else
             {
                 string nome = "%" + txtNome.Text + "%";
-                tb_usuarioTableAdapter.FillByNome(contasDataSet.tb_usuario, nome, "%"+tipo+"%");
+                tb_usuarioTableAdapter.FillByNome(contasDataSet.tb_usuario, nome, tipo);
             }
         }
     }

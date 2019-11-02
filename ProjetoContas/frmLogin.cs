@@ -52,6 +52,10 @@ namespace ProjetoContas
                     fp.Show();
                     Hide();
                 }
+                else
+                {
+                    MessageBox.Show("Login ou senha incorretos");
+                }
             }   
         }
 
