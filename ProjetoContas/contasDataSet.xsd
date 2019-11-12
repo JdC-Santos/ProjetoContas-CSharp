@@ -346,6 +346,25 @@ WHERE        (nm_usuario LIKE @nome) AND (sg_tipo LIKE @tipo)</CommandText>
               </DbSource>
             </Sources>
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tb_usuario_contaTableAdapter" GeneratorDataComponentClassName="tb_usuario_contaTableAdapter" Name="tb_usuario_conta" UserDataComponentName="tb_usuario_contaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="contasConnectionString (Settings)" DbObjectName="dbo.tb_usuario" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        tb_usuario.cd_usuario, tb_usuario.nm_usuario
+FROM            tb_conta INNER JOIN
+                         tb_usuario ON tb_conta.id_usuario = tb_usuario.cd_usuario</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="cd_usuario" DataSetColumn="cd_usuario" />
+              <Mapping SourceColumn="nm_usuario" DataSetColumn="nm_usuario" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -354,7 +373,7 @@ WHERE        (nm_usuario LIKE @nome) AND (sg_tipo LIKE @tipo)</CommandText>
   <xs:element name="contasDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="contasDataSet" msprop:Generator_UserDSName="contasDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="tb_administrador" msprop:Generator_TableClassName="tb_administradorDataTable" msprop:Generator_TableVarName="tabletb_administrador" msprop:Generator_RowChangedName="tb_administradorRowChanged" msprop:Generator_TablePropName="tb_administrador" msprop:Generator_RowDeletingName="tb_administradorRowDeleting" msprop:Generator_RowChangingName="tb_administradorRowChanging" msprop:Generator_RowEvHandlerName="tb_administradorRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_administradorRowDeleted" msprop:Generator_RowClassName="tb_administradorRow" msprop:Generator_UserTableName="tb_administrador" msprop:Generator_RowEvArgName="tb_administradorRowChangeEvent">
+        <xs:element name="tb_administrador" msprop:Generator_TableClassName="tb_administradorDataTable" msprop:Generator_TableVarName="tabletb_administrador" msprop:Generator_TablePropName="tb_administrador" msprop:Generator_RowDeletingName="tb_administradorRowDeleting" msprop:Generator_RowChangingName="tb_administradorRowChanging" msprop:Generator_RowEvHandlerName="tb_administradorRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_administradorRowDeleted" msprop:Generator_UserTableName="tb_administrador" msprop:Generator_RowChangedName="tb_administradorRowChanged" msprop:Generator_RowEvArgName="tb_administradorRowChangeEvent" msprop:Generator_RowClassName="tb_administradorRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="cd_administrador" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columncd_administrador" msprop:Generator_ColumnPropNameInRow="cd_administrador" msprop:Generator_ColumnPropNameInTable="cd_administradorColumn" msprop:Generator_UserColumnName="cd_administrador" type="xs:int" />
@@ -389,7 +408,7 @@ WHERE        (nm_usuario LIKE @nome) AND (sg_tipo LIKE @tipo)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tb_conta" msprop:Generator_TableClassName="tb_contaDataTable" msprop:Generator_TableVarName="tabletb_conta" msprop:Generator_RowChangedName="tb_contaRowChanged" msprop:Generator_TablePropName="tb_conta" msprop:Generator_RowDeletingName="tb_contaRowDeleting" msprop:Generator_RowChangingName="tb_contaRowChanging" msprop:Generator_RowEvHandlerName="tb_contaRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_contaRowDeleted" msprop:Generator_RowClassName="tb_contaRow" msprop:Generator_UserTableName="tb_conta" msprop:Generator_RowEvArgName="tb_contaRowChangeEvent">
+        <xs:element name="tb_conta" msprop:Generator_TableClassName="tb_contaDataTable" msprop:Generator_TableVarName="tabletb_conta" msprop:Generator_TablePropName="tb_conta" msprop:Generator_RowDeletingName="tb_contaRowDeleting" msprop:Generator_RowChangingName="tb_contaRowChanging" msprop:Generator_RowEvHandlerName="tb_contaRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_contaRowDeleted" msprop:Generator_UserTableName="tb_conta" msprop:Generator_RowChangedName="tb_contaRowChanged" msprop:Generator_RowEvArgName="tb_contaRowChangeEvent" msprop:Generator_RowClassName="tb_contaRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="cd_conta" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columncd_conta" msprop:Generator_ColumnPropNameInRow="cd_conta" msprop:Generator_ColumnPropNameInTable="cd_contaColumn" msprop:Generator_UserColumnName="cd_conta" type="xs:int" />
@@ -416,7 +435,7 @@ WHERE        (nm_usuario LIKE @nome) AND (sg_tipo LIKE @tipo)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tb_usuario" msprop:Generator_TableClassName="tb_usuarioDataTable" msprop:Generator_TableVarName="tabletb_usuario" msprop:Generator_TablePropName="tb_usuario" msprop:Generator_RowDeletingName="tb_usuarioRowDeleting" msprop:Generator_RowChangingName="tb_usuarioRowChanging" msprop:Generator_RowEvHandlerName="tb_usuarioRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_usuarioRowDeleted" msprop:Generator_UserTableName="tb_usuario" msprop:Generator_RowChangedName="tb_usuarioRowChanged" msprop:Generator_RowEvArgName="tb_usuarioRowChangeEvent" msprop:Generator_RowClassName="tb_usuarioRow">
+        <xs:element name="tb_usuario" msprop:Generator_TableClassName="tb_usuarioDataTable" msprop:Generator_TableVarName="tabletb_usuario" msprop:Generator_RowChangedName="tb_usuarioRowChanged" msprop:Generator_TablePropName="tb_usuario" msprop:Generator_RowDeletingName="tb_usuarioRowDeleting" msprop:Generator_RowChangingName="tb_usuarioRowChanging" msprop:Generator_RowEvHandlerName="tb_usuarioRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_usuarioRowDeleted" msprop:Generator_RowClassName="tb_usuarioRow" msprop:Generator_UserTableName="tb_usuario" msprop:Generator_RowEvArgName="tb_usuarioRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="cd_usuario" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columncd_usuario" msprop:Generator_ColumnPropNameInRow="cd_usuario" msprop:Generator_ColumnPropNameInTable="cd_usuarioColumn" msprop:Generator_UserColumnName="cd_usuario" type="xs:int" />
@@ -521,6 +540,20 @@ WHERE        (nm_usuario LIKE @nome) AND (sg_tipo LIKE @tipo)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="tb_usuario_conta" msprop:Generator_TableClassName="tb_usuario_contaDataTable" msprop:Generator_TableVarName="tabletb_usuario_conta" msprop:Generator_TablePropName="tb_usuario_conta" msprop:Generator_RowDeletingName="tb_usuario_contaRowDeleting" msprop:Generator_RowChangingName="tb_usuario_contaRowChanging" msprop:Generator_RowEvHandlerName="tb_usuario_contaRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_usuario_contaRowDeleted" msprop:Generator_UserTableName="tb_usuario_conta" msprop:Generator_RowChangedName="tb_usuario_contaRowChanged" msprop:Generator_RowEvArgName="tb_usuario_contaRowChangeEvent" msprop:Generator_RowClassName="tb_usuario_contaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="cd_usuario" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columncd_usuario" msprop:Generator_ColumnPropNameInRow="cd_usuario" msprop:Generator_ColumnPropNameInTable="cd_usuarioColumn" msprop:Generator_UserColumnName="cd_usuario" type="xs:int" />
+              <xs:element name="nm_usuario" msprop:Generator_ColumnVarNameInTable="columnnm_usuario" msprop:Generator_ColumnPropNameInRow="nm_usuario" msprop:Generator_ColumnPropNameInTable="nm_usuarioColumn" msprop:Generator_UserColumnName="nm_usuario" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -535,10 +568,14 @@ WHERE        (nm_usuario LIKE @nome) AND (sg_tipo LIKE @tipo)</CommandText>
       <xs:selector xpath=".//mstns:tb_usuario" />
       <xs:field xpath="mstns:cd_usuario" />
     </xs:unique>
+    <xs:unique name="tb_usuario_conta_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tb_usuario_conta" />
+      <xs:field xpath="mstns:cd_usuario" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="tb_usuario_tb_conta" msdata:parent="tb_usuario" msdata:child="tb_conta" msdata:parentkey="cd_usuario" msdata:childkey="id_usuario" msprop:Generator_UserChildTable="tb_conta" msprop:Generator_ChildPropName="Gettb_contaRows" msprop:Generator_UserRelationName="tb_usuario_tb_conta" msprop:Generator_RelationVarName="relationtb_usuario_tb_conta" msprop:Generator_UserParentTable="tb_usuario" msprop:Generator_ParentPropName="tb_usuarioRow" />
+      <msdata:Relationship name="tb_usuario_tb_conta" msdata:parent="tb_usuario" msdata:child="tb_conta" msdata:parentkey="cd_usuario" msdata:childkey="id_usuario" msprop:Generator_UserChildTable="tb_conta" msprop:Generator_ChildPropName="Gettb_contaRows" msprop:Generator_UserRelationName="tb_usuario_tb_conta" msprop:Generator_ParentPropName="tb_usuarioRow" msprop:Generator_RelationVarName="relationtb_usuario_tb_conta" msprop:Generator_UserParentTable="tb_usuario" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

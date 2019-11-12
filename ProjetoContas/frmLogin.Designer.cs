@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.txtPw = new System.Windows.Forms.TextBox();
+            this.contasDataSet = new ProjetoContas.contasDataSet();
+            this.tb_administradorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tb_administradorTableAdapter = new ProjetoContas.contasDataSetTableAdapters.tb_administradorTableAdapter();
+            this.tableAdapterManager = new ProjetoContas.contasDataSetTableAdapters.TableAdapterManager();
+            ((System.ComponentModel.ISupportInitialize)(this.contasDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb_administradorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSair
@@ -70,11 +77,33 @@
             this.txtPw.TabIndex = 3;
             this.txtPw.UseSystemPasswordChar = true;
             // 
+            // contasDataSet
+            // 
+            this.contasDataSet.DataSetName = "contasDataSet";
+            this.contasDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tb_administradorBindingSource
+            // 
+            this.tb_administradorBindingSource.DataMember = "tb_administrador";
+            this.tb_administradorBindingSource.DataSource = this.contasDataSet;
+            // 
+            // tb_administradorTableAdapter
+            // 
+            this.tb_administradorTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.tb_administradorTableAdapter = this.tb_administradorTableAdapter;
+            this.tableAdapterManager.tb_contaTableAdapter = null;
+            this.tableAdapterManager.tb_usuarioTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = ProjetoContas.contasDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
             // formLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(356, 208);
+            this.ClientSize = new System.Drawing.Size(356, 242);
             this.ControlBox = false;
             this.Controls.Add(this.txtPw);
             this.Controls.Add(this.txtLogin);
@@ -83,6 +112,8 @@
             this.Name = "formLogin";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.formLogin_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.contasDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb_administradorBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -94,6 +125,10 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.TextBox txtLogin;
         private System.Windows.Forms.TextBox txtPw;
+        private contasDataSet contasDataSet;
+        private System.Windows.Forms.BindingSource tb_administradorBindingSource;
+        private contasDataSetTableAdapters.tb_administradorTableAdapter tb_administradorTableAdapter;
+        private contasDataSetTableAdapters.TableAdapterManager tableAdapterManager;
     }
 }
 

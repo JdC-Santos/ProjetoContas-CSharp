@@ -37,6 +37,7 @@
             System.Windows.Forms.Label vl_pagoLabel;
             System.Windows.Forms.Label ds_obsLabel;
             System.Windows.Forms.Label id_usuarioLabel;
+            System.Windows.Forms.Label label1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmContasPagar));
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -63,6 +64,9 @@
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.tb_contaTableAdapter = new ProjetoContas.contasDataSetTableAdapters.tb_contaTableAdapter();
             this.tableAdapterManager = new ProjetoContas.contasDataSetTableAdapters.TableAdapterManager();
+            this.tb_usuario_contaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tb_usuario_contaTableAdapter = new ProjetoContas.contasDataSetTableAdapters.tb_usuario_contaTableAdapter();
+            this.nm_usuarioTextBox = new System.Windows.Forms.TextBox();
             cd_contaLabel = new System.Windows.Forms.Label();
             dt_emissaoLabel = new System.Windows.Forms.Label();
             dt_vencimentoLabel = new System.Windows.Forms.Label();
@@ -71,8 +75,10 @@
             vl_pagoLabel = new System.Windows.Forms.Label();
             ds_obsLabel = new System.Windows.Forms.Label();
             id_usuarioLabel = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tb_contaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contasDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb_usuario_contaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // cd_contaLabel
@@ -141,11 +147,20 @@
             // id_usuarioLabel
             // 
             id_usuarioLabel.AutoSize = true;
-            id_usuarioLabel.Location = new System.Drawing.Point(71, 268);
+            id_usuarioLabel.Location = new System.Drawing.Point(71, 271);
             id_usuarioLabel.Name = "id_usuarioLabel";
-            id_usuarioLabel.Size = new System.Drawing.Size(44, 13);
+            id_usuarioLabel.Size = new System.Drawing.Size(43, 13);
             id_usuarioLabel.TabIndex = 46;
-            id_usuarioLabel.Text = "usuario:";
+            id_usuarioLabel.Text = "Código:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(174, 271);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(38, 13);
+            label1.TabIndex = 49;
+            label1.Text = "Nome:";
             // 
             // btnSalvar
             // 
@@ -334,11 +349,12 @@
             // id_usuarioTextBox
             // 
             this.id_usuarioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_contaBindingSource, "id_usuario", true));
-            this.id_usuarioTextBox.Location = new System.Drawing.Point(117, 265);
+            this.id_usuarioTextBox.Location = new System.Drawing.Point(117, 268);
             this.id_usuarioTextBox.MaxLength = 5;
             this.id_usuarioTextBox.Name = "id_usuarioTextBox";
-            this.id_usuarioTextBox.Size = new System.Drawing.Size(377, 20);
+            this.id_usuarioTextBox.Size = new System.Drawing.Size(51, 20);
             this.id_usuarioTextBox.TabIndex = 47;
+            this.id_usuarioTextBox.TextChanged += new System.EventHandler(this.id_usuarioTextBox_TextChanged);
             // 
             // printPreviewDialog1
             // 
@@ -367,12 +383,31 @@
             this.tableAdapterManager.tb_usuarioTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = ProjetoContas.contasDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // tb_usuario_contaBindingSource
+            // 
+            this.tb_usuario_contaBindingSource.DataMember = "tb_usuario_conta";
+            this.tb_usuario_contaBindingSource.DataSource = this.contasDataSet;
+            // 
+            // tb_usuario_contaTableAdapter
+            // 
+            this.tb_usuario_contaTableAdapter.ClearBeforeFill = true;
+            // 
+            // nm_usuarioTextBox
+            // 
+            this.nm_usuarioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_usuario_contaBindingSource, "nm_usuario", true));
+            this.nm_usuarioTextBox.Location = new System.Drawing.Point(218, 268);
+            this.nm_usuarioTextBox.Name = "nm_usuarioTextBox";
+            this.nm_usuarioTextBox.Size = new System.Drawing.Size(276, 20);
+            this.nm_usuarioTextBox.TabIndex = 50;
+            // 
             // frmContasPagar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(587, 450);
+            this.ClientSize = new System.Drawing.Size(697, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.nm_usuarioTextBox);
+            this.Controls.Add(label1);
             this.Controls.Add(cd_contaLabel);
             this.Controls.Add(this.cd_contaTextBox);
             this.Controls.Add(dt_emissaoLabel);
@@ -405,6 +440,7 @@
             this.Load += new System.EventHandler(this.frmContasPagar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tb_contaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contasDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb_usuario_contaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -436,5 +472,8 @@
         private System.Windows.Forms.TextBox id_usuarioTextBox;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.BindingSource tb_usuario_contaBindingSource;
+        private contasDataSetTableAdapters.tb_usuario_contaTableAdapter tb_usuario_contaTableAdapter;
+        private System.Windows.Forms.TextBox nm_usuarioTextBox;
     }
 }

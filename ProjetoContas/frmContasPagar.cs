@@ -156,6 +156,8 @@ namespace ProjetoContas
 
         private void frmContasPagar_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'contasDataSet.tb_usuario_conta'. Você pode movê-la ou removê-la conforme necessário.
+            this.tb_usuario_contaTableAdapter.Fill(this.contasDataSet.tb_usuario_conta);
             // TODO: esta linha de código carrega dados na tabela 'contasDataSet.tb_conta'. Você pode movê-la ou removê-la conforme necessário.
             this.tb_contaTableAdapter.Fill(this.contasDataSet.tb_conta);
             this.tb_contaBindingSource.Filter = "ds_tipo = '"+ tipoConta + "'";
@@ -291,6 +293,14 @@ namespace ProjetoContas
             {
                 e.KeyChar = (char)0;
             }
+        }
+
+        private void id_usuarioTextBox_TextChanged(object sender, EventArgs e)
+        {
+            string where = " cd_usuario = '"+id_usuarioTextBox.Text+"' ";
+            
+            tb_usuario_contaBindingSource.Filter = where;
+            tb_usuario_contaTableAdapter.Fill(contasDataSet.tb_usuario_conta);
         }
     }
 }

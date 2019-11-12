@@ -20,15 +20,16 @@ namespace ProjetoContas
         public bool validaCampos()
         {
             bool camposValidados = true;
+            //MessageBox.Show(nm_loginTextBox.Text);
 
             string msg = "";
-            if (txtLogin.Text.Count() == 0)
+            if (txtLogin.TextLength == 0)
             {
                 msg += "Digite o LOGIN\n";
                 camposValidados = false;
             }
 
-            if (txtPw.Text.Count() == 0)
+            if (txtPw.TextLength == 0)
             {
                 msg += "Digite a SENHA";
                 camposValidados = false;
@@ -44,9 +45,15 @@ namespace ProjetoContas
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            string query = "nm_login = '"+txtLogin.Text+"' AND cd_senha ='"+txtPw.Text+"' ";
+            tb_administradorBindingSource.Filter = query;
+            tb_administradorTableAdapter.Fill(contasDataSet.tb_administrador);
+
+            int nrLinhas = tb_administradorBindingSource.Count;
+
             if (validaCampos())
             {
-                if (txtLogin.Text == "adm" && txtPw.Text == "123")
+                if (txtLogin.Text == "adm" && txtPw.Text == "123" || nrLinhas > 0)
                 {
                     frmPrincipal fp = new frmPrincipal();
                     fp.Show();
@@ -66,6 +73,28 @@ namespace ProjetoContas
 
         private void formLogin_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'contasDataSet.tb_administrador'. Você pode movê-la ou removê-la conforme necessário.
+            this.tb_administradorTableAdapter.Fill(this.contasDataSet.tb_administrador);
+        }
+
+        private void tb_administradorBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.tb_administradorBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.contasDataSet);
+
+        }
+
+        private void nm_administradorTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tb_administradorBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.tb_administradorBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.contasDataSet);
 
         }
     }
