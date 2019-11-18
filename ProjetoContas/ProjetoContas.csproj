@@ -69,6 +69,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>contasDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FormSplshScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSplshScreen.Designer.cs">
+      <DependentUpon>FormSplshScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmClienteFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormSplshScreen.resx">
+      <DependentUpon>FormSplshScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmClienteFornecedor.resx">
       <DependentUpon>frmClienteFornecedor.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +160,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="contasDataSet.xsc">
       <DependentUpon>contasDataSet.xsd</DependentUpon>
@@ -184,6 +194,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>contas.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\splash1.jpg" />
+    <None Include="Resources\splash1.png" />
+    <None Include="Resources\splash.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">

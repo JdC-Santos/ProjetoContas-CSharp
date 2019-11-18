@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace ProjetoContas
 {
@@ -15,6 +16,10 @@ namespace ProjetoContas
         public formLogin()
         {
             InitializeComponent();
+            FormSplshScreen fss = new FormSplshScreen();
+            fss.Show();
+            Thread.Sleep(3000);
+            fss.Close();
         }
         
         public bool validaCampos()

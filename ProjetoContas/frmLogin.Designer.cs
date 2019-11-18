@@ -110,6 +110,7 @@
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btnSair);
             this.Name = "formLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.formLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.contasDataSet)).EndInit();
