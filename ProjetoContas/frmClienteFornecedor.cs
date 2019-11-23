@@ -13,6 +13,51 @@ namespace ProjetoContas
     public partial class frmClienteFornecedor : Form
     {
         private string tipo;
+
+        private bool ValidarCpf(string cpf)
+        {
+            int[] nr = new int[11];
+            int cont = 0, tot = 0, dv1 = 0, dv2 = 0;
+
+            for (int i = 0; i <= 10; i++)
+            {
+                nr[i] = int.Parse(cpf.Substring(i, 1));
+            }
+            
+            //VALIDA O PRIMEIRO NUMERO
+            for (int i = 10; i >= 2; i--)
+            {
+                tot += nr[cont] * i;
+                cont++;
+            }
+            
+            dv1 = 11 - tot % 11;
+            dv1 = dv1 > 9 ? 0 : dv1;
+
+            //VERIFICA O PRIMEIRO DIGITO
+            if (nr[9] == dv1)
+            {
+                //VALIDA O PRIMEIRO NUMERO
+                cont = 0;
+                tot = 0;
+
+                for (int i = 11; i >= 2; i--)
+                {
+                    tot += nr[cont] * i;
+                    cont++;
+                }
+
+                dv2 = 11 - tot % 11;
+                dv2 = dv2 > 9 ? 0 : dv2;
+                //VERIFICA O SEGUNDO DIGITO
+                bool ret = nr[10] == dv2 ? true:  false;
+                return ret;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public frmClienteFornecedor(string tp)
         {
             this.tipo = tp;
@@ -84,10 +129,18 @@ namespace ProjetoContas
                 validado = false;
             }
 
-            if (cd_cpfTextBox.TextLength == 0 && cd_cnpjTextBox.TextLength == 0)
+            if (cd_cpfTextBox.TextLength == 0)
             {
                 msg += "Digite o CPF ou CNPJ do " + tp + "\n";
                 validado = false;
+            }
+            else
+            {
+                if( !ValidarCpf(cd_cpfTextBox.Text))
+                {
+                    msg += "CPF inválido \n";
+                    validado = false;
+                }
             }
 
             if (cd_rgTextBox.TextLength == 0)
@@ -150,10 +203,10 @@ namespace ProjetoContas
             ds_telefoneTextBox.Enabled = true;
             ds_emailTextBox.Enabled = true;
             sg_tipoTextBox.Enabled = false;
-            cd_cpfTextBox.Enabled = true;
-            cd_cnpjTextBox.Enabled = true;
-            cd_rgTextBox.Enabled = true;
-            cd_ieTextBox.Enabled = true;
+            cd_cpfTextBox.Enabled = false;
+            cd_cnpjTextBox.Enabled = false;
+            cd_rgTextBox.Enabled = false;
+            cd_ieTextBox.Enabled = false;
 
             btnAnterior.Enabled = false;
             btnProximo.Enabled = false;
@@ -318,6 +371,24 @@ namespace ProjetoContas
             if (!((e.KeyChar == 'f' || e.KeyChar == 'j') || TclPadrao(e.KeyChar) ))
             {
                 e.KeyChar = (char)0;
+            }
+            else
+            {
+                cd_cpfTextBox.Enabled = false;
+                cd_rgTextBox.Enabled = false;
+                cd_cnpjTextBox.Enabled = false;
+                cd_ieTextBox.Enabled = false;
+
+                if (e.KeyChar == 'f')
+                {
+                    cd_cpfTextBox.Enabled = true;
+                    cd_rgTextBox.Enabled = true;
+                }
+                else if(e.KeyChar == 'j')
+                {
+                    cd_cnpjTextBox.Enabled = true;
+                    cd_ieTextBox.Enabled = true;
+                }
             }
         }
 
