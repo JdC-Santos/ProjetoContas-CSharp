@@ -29,16 +29,16 @@ namespace ProjetoContas
         //registro de transação - tipo 1
         private string reg = "";
         private string reg_id = "1";
-        private string reg_agencia_debito;
-        private string reg_digito_agencia_debito;
-        private string reg_razao_cc;
-        private string reg_cc;
-        private string reg_dgt_cc;
-        private string reg_id_emp_benef_bnc;
-        private string reg_nr_ctrl_participante;
+        private string reg_agencia_debito = "00000";
+        private string reg_digito_agencia_debito = " ";
+        private string reg_razao_cc = "00000";
+        private string reg_cc = "0000000";
+        private string reg_dgt_cc = " ";
+        private string reg_id_emp_benef_bnc = "00190161000012345";
+        private string reg_nr_ctrl_participante = "";
         private string reg_cd_bnc_debitado_cmr_compensacao = "237";
-        private string reg_multa;
-        private string reg_percent_multa;
+        private string reg_multa = "2";
+        private string reg_percent_multa = "0200";
         private string reg_id_titulo_banco;
         private string reg_dgt_auto_conf_nr_banc;
         private string reg_desc_bonif_dia;
@@ -96,7 +96,7 @@ namespace ProjetoContas
         public string Reg_cc { get => reg_cc; set => reg_cc = value; }
         public string Reg_dgt_cc { get => reg_dgt_cc; set => reg_dgt_cc = value; }
         public string Reg_id_emp_benef_bnc { get => reg_id_emp_benef_bnc; set => reg_id_emp_benef_bnc = value; }
-        public string Reg_nr_ctrl_participante { get => reg_nr_ctrl_participante; set => reg_nr_ctrl_participante = value; }
+        public string Reg_nr_ctrl_participante { get => reg_nr_ctrl_participante.PadRight(25); set => reg_nr_ctrl_participante = value; }
         public string Reg_cd_bnc_debitado_cmr_compensacao { get => reg_cd_bnc_debitado_cmr_compensacao; set => reg_cd_bnc_debitado_cmr_compensacao = value; }
         public string Reg_multa { get => reg_multa; set => reg_multa = value; }
         public string Reg_percent_multa { get => reg_percent_multa; set => reg_percent_multa = value; }

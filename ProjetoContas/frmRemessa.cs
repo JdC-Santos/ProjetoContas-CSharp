@@ -79,10 +79,6 @@ namespace ProjetoContas
 
                 drcr = (DataRowView)tb_contaBindingSource.Current;
                 string cd_conta = drcr["cd_conta"].ToString().PadRight(25);
-
-                item += "00000 000000000000 00190161000012345" + cd_conta.PadRight(25);
-                item += "23720200" + nossoNumero(cd_conta.PadLeft(11,'0'));
-
                 arq.WriteLine(item);
             }            
         }
