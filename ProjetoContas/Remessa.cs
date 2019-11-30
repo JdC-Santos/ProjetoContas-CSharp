@@ -27,7 +27,8 @@ namespace ProjetoContas
         private string linha = "000000";
 
         //registro de transação - tipo 1
-        private string reg_id;
+        private string reg = "";
+        private string reg_id = "1";
         private string reg_agencia_debito;
         private string reg_digito_agencia_debito;
         private string reg_razao_cc;
@@ -72,7 +73,23 @@ namespace ProjetoContas
         private string reg_sac_avalista;
         private string reg_nr_sequ_reg;
 
-        public string Reg_id { get => reg_id; set => reg_id = value; }
+
+        public string getRegistro()
+        {
+            reg += Reg_id + Reg_agencia_debito + Reg_razao_cc + Reg_cc + Reg_dgt_cc + Reg_id_emp_benef_bnc;
+            reg += Reg_nr_ctrl_participante + Reg_cd_bnc_debitado_cmr_compensacao + Reg_cd_bnc_debitado_cmr_compensacao;
+            reg += Reg_multa + Reg_percent_multa + Reg_id_titulo_banco + Reg_dgt_auto_conf_nr_banc + Reg_desc_bonif_dia;
+            reg += Reg_cond_emissao_pap_cobranca + Reg_id_deb_automatico + Reg_id_operacao_bnc + Reg_ic_rateio_credito;
+            reg += Reg_end_avs_deb_automatico + Reg_qtd_pag + Reg_id_ocorrencia + Reg_nr_doc + Reg_dt_venc_titulo;
+            reg += Reg_vl_titulo + Reg_bnc_encarr_cobr + Reg_agnc_depos + Reg_espec_ttl + Reg_identificacao + Reg_dt_emi_ttl;
+            reg += Reg_1_instr + Reg_2_instr + Reg_vl_cobr_dia_atraso + Reg_dt_lmt_conces_desc + Reg_vl_desc + Reg_vl_IOF;
+            reg += Reg_vl_abat_conc_canc + Reg_id_tp_inscr_pag + Reg_nm_pagador + Reg_endereco_compl + Reg_1_msg;
+            reg += Reg_CEP + Reg_sufixo_CEP + Reg_sac_avalista + Reg_nr_sequ_reg;
+            return reg;
+        }
+
+        public string Reg_id { get => reg_id; }
+
         public string Reg_agencia_debito { get => reg_agencia_debito; set => reg_agencia_debito = value; }
         public string Reg_digito_agencia_debito { get => reg_digito_agencia_debito; set => reg_digito_agencia_debito = value; }
         public string Reg_razao_cc { get => reg_razao_cc; set => reg_razao_cc = value; }
