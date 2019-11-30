@@ -13,6 +13,7 @@ namespace ProjetoContas
 {
     public partial class frmRemessa : Form
     {
+        private ClassValidacao valida = new ClassValidacao();
         public frmRemessa()
         {
             InitializeComponent();
@@ -60,22 +61,35 @@ namespace ProjetoContas
 
             arq.WriteLine(cabecalho);
 
+            DataRowView drc, drcr;
+
             while (tb_contaBindingSource.Position < tb_contaBindingSource.Count)
             {
                 linha++;
-                
-                nossoNumero = contasDataSet.tb_conta.Rows[tb_contaBindingSource.Position][contasDataSet.tb_conta.cd_contaColumn].ToString().PadLeft(11,'0');
+                drcr = (DataRowView)tb_contaBindingSource.Current;
+
+                int cd_usuario = int.Parse(drcr["id_usuario"].ToString());
+                int reg = tb_usuarioBindingSource.Find("cd_usuario",cd_usuario);
+                tb_usuarioBindingSource.Position = reg;
+
                 //criar classe para validacoes
                 string DV = "0";
                 //agencia de debito
-                //
                 string item = "1";
-                string cd_conta = contasDataSet.tb_conta.Rows[tb_contaBindingSource.Position][contasDataSet.tb_conta.cd_contaColumn].ToString();
+
+                drcr = (DataRowView)tb_contaBindingSource.Current;
+                string cd_conta = drcr["cd_conta"].ToString().PadRight(25);
+
                 item += "00000 000000000000 00190161000012345" + cd_conta.PadRight(25);
-                item += "23720200"+nossoNumero+DV;
+                item += "23720200" + nossoNumero(cd_conta.PadLeft(11,'0'));
 
                 arq.WriteLine(item);
             }            
+        }
+
+        public string nossoNumero(string cd)
+        {
+            return "";
         }
     }
 }

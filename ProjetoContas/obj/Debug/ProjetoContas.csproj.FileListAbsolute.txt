@@ -128,3 +128,4 @@ C:\Users\aluno2\Source\Repos\ProjetoContas-CSharp\ProjetoContas\obj\Debug\Projet
 C:\Users\aluno2\Source\Repos\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.csproj.CoreCompileInputs.cache
 C:\Users\aluno2\Source\Repos\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.exe
 C:\Users\aluno2\Source\Repos\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.pdb
+C:\Users\aluno1\Source\Repos\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.frmRemessa.resources

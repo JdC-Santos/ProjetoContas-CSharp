@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassValidacao.cs" />
     <Compile Include="contasDataSet.cs">
       <DependentUpon>contasDataSet.xsd</DependentUpon>
     </Compile>
