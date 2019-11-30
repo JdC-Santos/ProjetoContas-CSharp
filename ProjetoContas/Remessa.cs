@@ -19,11 +19,11 @@ namespace ProjetoContas
         private string cbc_nm_empresa;
         private string cbc_nr_bradesco = "237";
         private string cbc_nm_bradesco = "BRADESCO";
-        //private string cbc_dt_gravacao = "DDMMAA";
-        //private string cbc_branco8; //8 espaços em branco
+        private string cbc_dt_gravacao = "DDMMAA";
+        private string cbc_branco8; //8 espaços em branco
         private string cbc_id_sistema = "MX";
         private string cbc_nr_seq_remessa = "0000000";
-        //private string cbc_branco277;
+        private string cbc_branco277;
         private string linha = "000000";
 
         //registro de transação - tipo 1
@@ -100,8 +100,10 @@ namespace ProjetoContas
         public string Reg_cd_bnc_debitado_cmr_compensacao { get => reg_cd_bnc_debitado_cmr_compensacao; set => reg_cd_bnc_debitado_cmr_compensacao = value; }
         public string Reg_multa { get => reg_multa; set => reg_multa = value; }
         public string Reg_percent_multa { get => reg_percent_multa; set => reg_percent_multa = value; }
-        public string Reg_id_titulo_banco { get => reg_id_titulo_banco; set => reg_id_titulo_banco = value; }
-        public string Reg_dgt_auto_conf_nr_banc { get => reg_dgt_auto_conf_nr_banc; set => reg_dgt_auto_conf_nr_banc = value; }
+        public string Reg_id_titulo_banco { get => reg_id_titulo_banco; set => reg_id_titulo_banco = value.PadLeft(11,'0'); }
+        public string Reg_dgt_auto_conf_nr_banc {
+            get => NossoNumero();
+        }
         public string Reg_desc_bonif_dia { get => reg_desc_bonif_dia; set => reg_desc_bonif_dia = value; }
         public string Reg_cond_emissao_pap_cobranca { get => reg_cond_emissao_pap_cobranca; set => reg_cond_emissao_pap_cobranca = value; }
         public string Reg_id_deb_automatico { get => reg_id_deb_automatico; set => reg_id_deb_automatico = value; }
@@ -221,6 +223,34 @@ namespace ProjetoContas
         public void setLinha(int l)
         {
             linha = l.ToString("000000");
+        }
+
+        private string NossoNumero()
+        {
+            int[] nr = new int[11];
+            int cont = 0, tot = 0, dv = 0;
+
+            for (int i = 0; i <= 10; i++)
+            {
+                nr[i] = int.Parse(reg_id_titulo_banco.Substring(i, 1));
+            }
+
+            //VALIDA O PRIMEIRO NUMERO
+            cont = 0;
+            tot = 0;
+
+            for (int i = 11; i >= 2; i--)
+            {
+                tot += nr[cont] * i;
+                cont++;
+            }
+
+            dv = 11 - tot % 11;
+            if (dv >= 10)
+            {
+                return "P";
+            }
+            return dv.ToString();
         }
     }
 }
