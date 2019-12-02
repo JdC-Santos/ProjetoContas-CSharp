@@ -22,6 +22,23 @@ namespace ProjetoContas
             Desabilita();
         }
 
+        public void InsertCli()
+        {
+            nm_usuarioTextBox.Text = "Jhonatan Santos";
+            ds_usuarioTextBox.Text = "f";
+            ds_enderecoTextBox.Text = "rua bla bla, 444";
+            nm_cidadeTextBox.Text = "Itanhaem";
+            nm_bairroTextBox.Text = "savoy";
+            sg_estadoTextBox.Text = "SP";
+            cd_cepTextBox.Text = "11740000";
+            ds_telefoneTextBox.Text = "13998988876";
+            ds_emailTextBox.Text = "jdc@email.com";
+            sg_tipoTextBox.Text = "c";
+            cd_cpfTextBox.Text = "44069525866";
+            cd_rgTextBox.Text = "447809944";
+
+        }
+
         public bool ValidarForm()
         {
             bool validado = true;
@@ -232,6 +249,9 @@ namespace ProjetoContas
         {
             tb_usuarioBindingSource.AddNew();
             Habilita();
+            
+            //method apenas para testar
+            InsertCli();
 
             if (this.tipo == "f")
             {

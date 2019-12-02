@@ -297,10 +297,15 @@ namespace ProjetoContas
 
         private void id_usuarioTextBox_TextChanged(object sender, EventArgs e)
         {
-            string where = " cd_usuario = '"+id_usuarioTextBox.Text+"' ";
+            string where = " cd_usuario = "+id_usuarioTextBox.Text.ToString() + " ";
             
-            tb_usuario_contaBindingSource.Filter = where;
-            tb_usuario_contaTableAdapter.Fill(contasDataSet.tb_usuario_conta);
+            if (id_usuarioTextBox.Text != "")
+            {
+                MessageBox.Show(where);
+                tb_usuario_contaBindingSource.Filter = where.ToString();
+                tb_usuario_contaTableAdapter.Fill(contasDataSet.tb_usuario_conta);
+            }
+            
         }
     }
 }

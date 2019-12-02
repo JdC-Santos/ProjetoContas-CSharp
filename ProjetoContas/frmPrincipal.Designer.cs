@@ -121,13 +121,14 @@
             // remessasToolStripMenuItem
             // 
             this.remessasToolStripMenuItem.Name = "remessasToolStripMenuItem";
-            this.remessasToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.remessasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.remessasToolStripMenuItem.Text = "Remessa";
+            this.remessasToolStripMenuItem.Click += new System.EventHandler(this.RemessasToolStripMenuItem_Click);
             // 
             // retornoToolStripMenuItem
             // 
             this.retornoToolStripMenuItem.Name = "retornoToolStripMenuItem";
-            this.retornoToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.retornoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.retornoToolStripMenuItem.Text = "Retorno";
             // 
             // sairToolStripMenuItem

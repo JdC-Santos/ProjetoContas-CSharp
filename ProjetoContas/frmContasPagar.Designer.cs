@@ -341,7 +341,7 @@
             // ds_tipoTextBox
             // 
             this.ds_tipoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_contaBindingSource, "ds_tipo", true));
-            this.ds_tipoTextBox.Location = new System.Drawing.Point(117, 300);
+            this.ds_tipoTextBox.Location = new System.Drawing.Point(117, 237);
             this.ds_tipoTextBox.Name = "ds_tipoTextBox";
             this.ds_tipoTextBox.Size = new System.Drawing.Size(377, 20);
             this.ds_tipoTextBox.TabIndex = 45;
@@ -397,6 +397,7 @@
             this.nm_usuarioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tb_usuario_contaBindingSource, "nm_usuario", true));
             this.nm_usuarioTextBox.Location = new System.Drawing.Point(218, 268);
             this.nm_usuarioTextBox.Name = "nm_usuarioTextBox";
+            this.nm_usuarioTextBox.ReadOnly = true;
             this.nm_usuarioTextBox.Size = new System.Drawing.Size(276, 20);
             this.nm_usuarioTextBox.TabIndex = 50;
             // 
@@ -404,7 +405,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(697, 450);
+            this.ClientSize = new System.Drawing.Size(590, 450);
             this.ControlBox = false;
             this.Controls.Add(this.nm_usuarioTextBox);
             this.Controls.Add(label1);

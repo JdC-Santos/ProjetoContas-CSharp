@@ -93,7 +93,6 @@ C:\Users\JHONATANDACOSTASANTO\source\repos\ProjetoContas-CSharp\ProjetoContas\bi
 C:\Users\JHONATANDACOSTASANTO\source\repos\ProjetoContas-CSharp\ProjetoContas\bin\Debug\ProjetoContas.exe.config
 C:\Users\JHONATANDACOSTASANTO\source\repos\ProjetoContas-CSharp\ProjetoContas\bin\Debug\ProjetoContas.exe
 C:\Users\JHONATANDACOSTASANTO\source\repos\ProjetoContas-CSharp\ProjetoContas\bin\Debug\ProjetoContas.pdb
-C:\Users\JHONATANDACOSTASANTO\source\repos\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.csprojAssemblyReference.cache
 C:\Users\JHONATANDACOSTASANTO\source\repos\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.frmClienteFornecedor.resources
 C:\Users\JHONATANDACOSTASANTO\source\repos\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.frmContasPagar.resources
 C:\Users\JHONATANDACOSTASANTO\source\repos\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.frmPesquisaClienteFornecedor.resources
@@ -129,3 +128,6 @@ C:\Users\aluno2\Source\Repos\ProjetoContas-CSharp\ProjetoContas\obj\Debug\Projet
 C:\Users\aluno2\Source\Repos\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.exe
 C:\Users\aluno2\Source\Repos\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.pdb
 C:\Users\aluno1\Source\Repos\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.frmRemessa.resources
+C:\Users\JHONATANDACOSTASANTO\source\repos\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.FormSplshScreen.resources
+C:\Users\JHONATANDACOSTASANTO\source\repos\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.frmRemessa.resources
+C:\Users\JHONATANDACOSTASANTO\source\repos\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.csprojAssemblyReference.cache

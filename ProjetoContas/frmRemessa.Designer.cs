@@ -37,8 +37,8 @@
             this.tb_contaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tb_contaTableAdapter = new ProjetoContas.contasDataSetTableAdapters.tb_contaTableAdapter();
             this.tableAdapterManager = new ProjetoContas.contasDataSetTableAdapters.TableAdapterManager();
-            this.tb_usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tb_usuarioTableAdapter = new ProjetoContas.contasDataSetTableAdapters.tb_usuarioTableAdapter();
+            this.tb_usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.contasDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_contaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_usuarioBindingSource)).BeginInit();
@@ -79,6 +79,7 @@
             this.btnSair.TabIndex = 3;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
             // contasDataSet
             // 
@@ -102,20 +103,21 @@
             this.tableAdapterManager.tb_usuarioTableAdapter = this.tb_usuarioTableAdapter;
             this.tableAdapterManager.UpdateOrder = ProjetoContas.contasDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // tb_usuarioTableAdapter
+            // 
+            this.tb_usuarioTableAdapter.ClearBeforeFill = true;
+            // 
             // tb_usuarioBindingSource
             // 
             this.tb_usuarioBindingSource.DataMember = "tb_usuario";
             this.tb_usuarioBindingSource.DataSource = this.contasDataSet;
-            // 
-            // tb_usuarioTableAdapter
-            // 
-            this.tb_usuarioTableAdapter.ClearBeforeFill = true;
             // 
             // frmRemessa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(532, 192);
+            this.ControlBox = false;
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.dtpInicial);
