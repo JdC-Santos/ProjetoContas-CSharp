@@ -131,3 +131,4 @@ C:\Users\aluno1\Source\Repos\ProjetoContas-CSharp\ProjetoContas\obj\Debug\Projet
 C:\Users\JHONATANDACOSTASANTO\source\repos\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.FormSplshScreen.resources
 C:\Users\JHONATANDACOSTASANTO\source\repos\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.frmRemessa.resources
 C:\Users\JHONATANDACOSTASANTO\source\repos\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.csprojAssemblyReference.cache
+C:\Users\aluno1\Source\Repos\ProjetoContas-CSharp\ProjetoContas\obj\Debug\ProjetoContas.frmRetorno.resources
