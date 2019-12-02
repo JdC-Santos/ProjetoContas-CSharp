@@ -97,18 +97,20 @@
             this.btnSair.TabIndex = 3;
             this.btnSair.Text = "SAIR";
             this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // frmRetorno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 158);
+            this.ControlBox = false;
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.txtArquivo);
             this.Controls.Add(this.label1);
             this.Name = "frmRetorno";
-            this.Text = "frmRetorno";
+            this.Text = "Formulário de Retorno";
             this.Load += new System.EventHandler(this.frmRetorno_Load);
             ((System.ComponentModel.ISupportInitialize)(this.contasDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_contaBindingSource)).EndInit();

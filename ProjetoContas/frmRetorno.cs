@@ -54,5 +54,10 @@ namespace ProjetoContas
 
             arq.Close();
         }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
