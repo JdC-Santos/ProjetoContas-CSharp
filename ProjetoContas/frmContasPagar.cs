@@ -301,7 +301,6 @@ namespace ProjetoContas
             
             if (id_usuarioTextBox.Text != "")
             {
-                MessageBox.Show(where);
                 tb_usuario_contaBindingSource.Filter = where.ToString();
                 tb_usuario_contaTableAdapter.Fill(contasDataSet.tb_usuario_conta);
             }

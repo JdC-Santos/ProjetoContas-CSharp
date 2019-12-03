@@ -133,7 +133,7 @@ namespace ProjetoContas
                     Objremessa.Reg_CEP = drc["cd_cep"].ToString().Substring(0, 5);
                     Objremessa.Reg_sufixo_CEP = drc["cd_cep"].ToString().Substring(5, 3);
                     Objremessa.Reg_sac_avalista = "".PadRight(60);
-                    Objremessa.Reg_nr_sequ_reg = linha.ToString();
+                    Objremessa.Reg_nr_sequ_reg = linha.ToString().PadLeft(6,'0');
 
                     string registro = Objremessa.getRegistro();
                     arq.WriteLine(registro);

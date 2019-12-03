@@ -244,14 +244,17 @@ namespace ProjetoContas
                 nr[i] = int.Parse(value.Substring(i, 1));
             }
 
-            //VALIDA O PRIMEIRO NUMERO
-            cont = 0;
             tot = 0;
+            int mult = 2;
 
-            for (int i = 11; i >= 2; i--)
+            for (int i = 10; i > 0; i--)
             {
-                tot += nr[cont] * i;
-                cont++;
+                tot += nr[i] * mult;
+                mult++;
+                if (mult == 8)
+                {
+                    mult = 2;
+                }
             }
 
             dv = 11 - tot % 11;
