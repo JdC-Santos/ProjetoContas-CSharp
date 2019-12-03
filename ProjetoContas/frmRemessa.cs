@@ -69,7 +69,6 @@ namespace ProjetoContas
                 while (linha <= tb_contaBindingSource.Count)
                 {
                     linha++;
-                    tb_contaBindingSource.Position = ( linha -1 );
 
                     drcr = (DataRowView)tb_contaBindingSource.Current;
                     string cd_conta = drcr["cd_conta"].ToString().PadRight(25);
@@ -96,18 +95,19 @@ namespace ProjetoContas
                     Objremessa.Reg_desc_bonif_dia = "".PadLeft(10, '0');
                     Objremessa.Reg_cond_emissao_pap_cobranca = "2"; // fixo
                     Objremessa.Reg_id_deb_automatico = "N"; // fixo?
+                    Objremessa.Reg_id_operacao_bnc = "".PadRight(10);
                     Objremessa.Reg_ic_rateio_credito = " ";
                     Objremessa.Reg_end_avs_deb_automatico = "0";
                     Objremessa.Reg_qtd_pag = "  ";
                     Objremessa.Reg_id_ocorrencia = "01";
-                    Objremessa.Reg_nr_doc = "".PadRight(10);
+                    Objremessa.Reg_nr_doc = cd_conta.PadRight(10);
                     Objremessa.Reg_dt_venc_titulo = drcr["dt_vencimento"].ToString();
-                    Objremessa.Reg_vl_titulo = drcr["vl_compra"].ToString();
+                    Objremessa.Reg_vl_titulo = (decimal.Parse(drcr["vl_compra"].ToString()) * 100).ToString().PadLeft(13,'0');
                     Objremessa.Reg_bnc_encarr_cobr = "".PadRight(3);
                     Objremessa.Reg_agnc_depos = "".PadRight(5);
-                    Objremessa.Reg_espec_ttl = "99";
+                    Objremessa.Reg_espec_ttl = "01";
                     Objremessa.Reg_identificacao = "N";
-                    Objremessa.Reg_dt_emi_ttl = drcr["dt_emissao"].ToString();
+                    Objremessa.Reg_dt_emi_ttl = dataSimples(drcr["dt_emissao"].ToString());
                     Objremessa.Reg_1_instr = "00";
                     Objremessa.Reg_2_instr = "00";
                     Objremessa.Reg_vl_cobr_dia_atraso = "".PadLeft(13, '0');
@@ -118,12 +118,12 @@ namespace ProjetoContas
 
                     if (drc["ds_usuario"].ToString() == "f")
                     {
-                        Objremessa.Reg_id_tp_inscr_pag = "1";
+                        Objremessa.Reg_id_tp_inscr_pag = "01";
                         Objremessa.Reg_inscr_pag = drc["cd_cpf"].ToString().PadLeft(14, '0');
                     }
                     else
                     {
-                        Objremessa.Reg_id_tp_inscr_pag = "2";
+                        Objremessa.Reg_id_tp_inscr_pag = "02";
                         Objremessa.Reg_inscr_pag = drc["cd_cnpj"].ToString().PadLeft(14, '0');
                     }
 
@@ -137,6 +137,7 @@ namespace ProjetoContas
 
                     string registro = Objremessa.getRegistro();
                     arq.WriteLine(registro);
+                    tb_contaBindingSource.MoveNext();
                    
                 }
             }
@@ -155,6 +156,14 @@ namespace ProjetoContas
         private void BtnSair_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private string dataSimples(string data)
+        {
+            string dd = data.Substring(0, 2);
+            string mm = data.Substring(3, 2);
+            string aa = data.Substring(8,2);
+            return dd+mm+aa;
         }
     }
 }
