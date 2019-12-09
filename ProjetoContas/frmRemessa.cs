@@ -71,7 +71,7 @@ namespace ProjetoContas
                     linha++;
 
                     drcr = (DataRowView)tb_contaBindingSource.Current;
-                    string cd_conta = drcr["cd_conta"].ToString().PadRight(25);
+                    string cd_conta = drcr["cd_conta"].ToString();
 
                     drc = (DataRowView)tb_usuarioBindingSource.Current;
                     int cd_usuario = int.Parse(drcr["id_usuario"].ToString());
@@ -102,12 +102,14 @@ namespace ProjetoContas
                     Objremessa.Reg_id_ocorrencia = "01";
                     Objremessa.Reg_nr_doc = cd_conta.PadRight(10);
                     Objremessa.Reg_dt_venc_titulo = drcr["dt_vencimento"].ToString();
-                    Objremessa.Reg_vl_titulo = (decimal.Parse(drcr["vl_compra"].ToString()) * 100).ToString().PadLeft(13,'0');
-                    Objremessa.Reg_bnc_encarr_cobr = "".PadRight(3);
-                    Objremessa.Reg_agnc_depos = "".PadRight(5);
+                    Objremessa.Reg_vl_titulo = (decimal.Parse(drcr["vl_compra"].ToString()) * 100).ToString().PadLeft(16,'0');
+                    Objremessa.Reg_bnc_encarr_cobr = "000";
+
+                    Objremessa.Reg_agnc_depos = "00000";
                     Objremessa.Reg_espec_ttl = "01";
                     Objremessa.Reg_identificacao = "N";
-                    Objremessa.Reg_dt_emi_ttl = dataSimples(drcr["dt_emissao"].ToString());
+                    Objremessa.Reg_dt_emi_ttl = drcr["dt_emissao"].ToString();
+
                     Objremessa.Reg_1_instr = "00";
                     Objremessa.Reg_2_instr = "00";
                     Objremessa.Reg_vl_cobr_dia_atraso = "".PadLeft(13, '0');
@@ -151,6 +153,7 @@ namespace ProjetoContas
             arq.WriteLine(rodape);
             arq.Close();
 
+            MessageBox.Show("Arquivo criado com sucesso!");
         }
 
         private void BtnSair_Click(object sender, EventArgs e)

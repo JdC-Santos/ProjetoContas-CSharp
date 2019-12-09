@@ -85,7 +85,7 @@ namespace ProjetoContas
             reg += Reg_end_avs_deb_automatico + Reg_qtd_pag + Reg_id_ocorrencia + Reg_nr_doc + Reg_dt_venc_titulo;
             reg += Reg_vl_titulo + Reg_bnc_encarr_cobr + Reg_agnc_depos + Reg_espec_ttl + Reg_identificacao + Reg_dt_emi_ttl;
             reg += Reg_1_instr + Reg_2_instr + Reg_vl_cobr_dia_atraso + Reg_dt_lmt_conces_desc + Reg_vl_desc + Reg_vl_IOF;
-            reg += Reg_vl_abat_conc_canc + Reg_id_tp_inscr_pag + Reg_nm_pagador + Reg_endereco_compl + Reg_1_msg;
+            reg += Reg_vl_abat_conc_canc + Reg_id_tp_inscr_pag + Reg_inscr_pag  + Reg_nm_pagador + Reg_endereco_compl + Reg_1_msg;
             reg += Reg_CEP + Reg_sufixo_CEP + Reg_sac_avalista + Reg_nr_sequ_reg;
             return reg;
         }
@@ -118,12 +118,12 @@ namespace ProjetoContas
             get => reg_dt_venc_titulo;
             set => reg_dt_venc_titulo = FormataData(value.ToString()) ; 
         }
-        public string Reg_vl_titulo { get => reg_vl_titulo; set => reg_vl_titulo = value; }
+        public string Reg_vl_titulo { get => reg_vl_titulo; set => reg_vl_titulo = tiraDecimal(value); }
         public string Reg_bnc_encarr_cobr { get => reg_bnc_encarr_cobr; set => reg_bnc_encarr_cobr = value; }
         public string Reg_agnc_depos { get => reg_agnc_depos; set => reg_agnc_depos = value; }
         public string Reg_espec_ttl { get => reg_espec_ttl; set => reg_espec_ttl = value; }
         public string Reg_identificacao { get => reg_identificacao; set => reg_identificacao = value; }
-        public string Reg_dt_emi_ttl { get => reg_dt_emi_ttl; set => reg_dt_emi_ttl = value; }
+        public string Reg_dt_emi_ttl { get => reg_dt_emi_ttl; set => reg_dt_emi_ttl = FormataData(value); }
         public string Reg_1_instr { get => reg_1_instr; set => reg_1_instr = value; }
         public string Reg_2_instr { get => reg_2_instr; set => reg_2_instr = value; }
         public string Reg_vl_cobr_dia_atraso { get => reg_vl_cobr_dia_atraso; set => reg_vl_cobr_dia_atraso = value; }
@@ -267,10 +267,28 @@ namespace ProjetoContas
 
         string FormataData(string data)
         {
-            string dd = data.Substring(0, 2);
-            string mm = data.Substring(3,2);
-            string aa = data.Substring(8, 2);
+            string[] dt2 = data.Split(' ');
+            string[] dt =  dt2[0].Split('/');
+            string dd = dt[0];
+            string mm = "";
+            if(dt[1].Length == 1)
+            {
+                mm = "0" + dt[1];
+            }
+            else
+            {
+                mm = dt[1];
+            }
+            
+
+            string aa = dt[2].Substring(2,2);
             return dd+mm+aa;
+        }
+
+        string tiraDecimal(string numero)
+        {
+            string[] n = numero.Split('.');
+            return n[0];
         }
     }
 }
